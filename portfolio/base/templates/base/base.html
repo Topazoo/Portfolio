@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peter Swanson</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet" type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+
+  <body>
+  
+<!-- Header -->
+      <div class="header">
+        <h1>Peter Swanson's Developer Portfolio<h1>
+	  </div>
+<!-- Header -->
+
+<!-- Navbar -->
+	<div class="navbk">
+	  <div class="navigation">
+		  <ul class="nav nav-pills">
+			<li role="presentation"><a href="/">Home</a></li>
+			<li role="presentation"><a href="/messenger">Smartwatch Messenger</a></li>
+            <li role="presentation"><a href="/issue_bot">Issue Salience Analysis Bot</a></li>
+			<li role="presentation"><a href="/vr_game">VR Game Scripts</a></li>
+			<li role="presentation"><a href="/vr_tracking">VR Motion Tracking</a></li>
+			<li role="presentation"><a href="/django_fs">Django Filesystem Map</a></li>
+		  </ul>
+	  </div>
+	</div>
+<!-- Navbar -->
+
+    <br>
+
+<!-- Content -->
+  <div class="pagebk">
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div> 
+  </div>
+
+<!-- Content -->
+ 
+  </body>
+  
+<!-- Footer -->
+    <br><br>
+	<div class="row" style="padding-left: 50px"> <!-- Move to CSS -->
+        <footer>
+				<a href="https://paypal.me/gabbycooper"><img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png"
+				alt="Donate"></a>
+				<img alt="" width="1" height="1"
+				src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+			</form>
+        <footer>
+	</div>
+<!-- Footer -->
+</html>
