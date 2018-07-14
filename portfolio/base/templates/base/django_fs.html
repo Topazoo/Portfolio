@@ -1,20 +1,297 @@
 {% extends 'base/base.html' %}
 {% block content %}
-<h1 align="center">Filesystem Map Demo</h1>
-<div class="container">
-  <h2>Root Directory: {{root.dir_name}}/</h2>
+
+<div class = "pagect">
+<div class="container-fluid">
+  <div class = "row">
+    <div class = "pagehd">
+	  <h1 align="center">Mapping Filesystems in Django</h1>
+	  <h4 align="center">(https://github.com/Topazoo/Django_Virtual_File_Hierarchy)</h4>
+	</div>
+  </div>
+
+  <div class = "row">
+    <div class = "pagehd">
+      <h2>The Concept</h2>
+	  <hr>
+    </div>
+    <div class="ct">
+	<div class="container-fluid">
+      <li>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy. I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
+	  <br><br>
+	  <li><b>The code below allows a webserver's frontend to dynamically display the server's underlying filesystem.</b></li>
+    </div>
+	</div>
+	<hr>
+  </div>
+
+  <div class = "row">
+    <div class = "pagehd">
+	  <h2>Demo</h2>
+	  <hr>
+    </div>
+	<div class="ct">
+	  <div class="container-fluid">
+	    <h3>Root Directory: {{root.dir_name}}/</h3>
+	    <br>
+	    <p>{{root.dir_name}}/</p>
+	    <ul>
+		  {% with root.files as files %}
+		  {% for file in files %}
+	        <p>* {{file}}</p>
+		  {% endfor %}
+		  {% endwith %}
+	
+		  {% with root.directories as dir %}
+		  {% include "base/direc_contents.html" %}
+		  {% endwith %}
+        </ul>
+	  </div>
+	</div>
+	<hr>
+  </div>
+
   <br>
-  <p>{{root.dir_name}}/</p>
-  <ul>
-	{% with root.files as files %}
-		{% for file in files %}
-			<p>* {{file}}</p>
-		{% endfor %}
-	{% endwith %}
- 
-	{% with root.directories as dir %}
-	{% include "base/direc_contents.html" %}
-	{% endwith %}
-  </ul>
- </div>
+
+  <div class = "row">
+    <div class = "pagehd">
+      <h2>Mapping Directory Hierarchies</h2>
+	  <hr>
+    </div>
+    <div class="ct">
+	<div class="container-fluid">
+      <li>The code for mapping directory hierarchies is written in Python and can be found below.</li>
+	  <br>
+	  <li>It uses a <i>Root</i> class to map the files and directories in any chosen directory, and then creates <i>Directory</i> classes for each directory found. The <i>Directory</i> classes then do the same for the directory they were created for. The resulting data structure preserves the hierarchy of the real directory.</li> 
+	  
+	  <br>
+	  
+	  <h4><i>directory_tree.py</i></h4>
+	  <pre>
+	  <code>
+from __future__ import print_function
+import os
+
+class Root(object):
+# The a root object holds the rest of the
+# virtual filesystem.
+
+# The root object contains the top level
+# of files and directories. Each directory
+# object holds it's level of files and
+# directories.
+
+# Root constructor must be passed a directory name!
+
+    dir_name = ""
+    directories = []
+    files = []
+
+    def __init__(self):
+        self.clear()
+
+    def populate(self, folder):
+        # Get all top level files and directories
+        if(len(self.directories) > 0 or len(self.files) > 0):
+            self.clear()
+
+        self.dir_name = folder
+            
+        for item in os.listdir(self.dir_name):
+            if os.path.isdir(os.path.join(self.dir_name, item)):
+                # Create a new directory object
+                found_dir = Directory(item, self.dir_name)
+                self.directories.append(found_dir)
+            if os.path.isfile(os.path.join(self.dir_name, item)):
+                self.files.append(item)
+
+        # Populate all top level directories
+        for directory in self.directories:
+            directory.populate(self.dir_name + '/' + str(directory))
+
+    def print_contents(self):
+        # Print full virtual filesystem 
+        print(self.dir_name, end="")
+        if(self.dir_name[-1] == '/'):
+            print('')
+        else:
+            print('/')
+        if(len(self.files) > 0):
+            for file in self.files:
+                print('  - ' + file)
+        if(len(self.directories) > 0):      
+            for directory in self.directories:
+                print('  ' + str(directory) + '/')
+                directory.print_contents(2)
+
+    def print_paths(self):
+        # Print full virtual filesystem 
+        print(self.dir_name, end="")
+        if(self.dir_name[-1] == '/'):
+            print('')
+        else:
+            print('/')
+        if(len(self.files) > 0):
+            for file in self.files:
+                print('  ' + str(self.dir_name) + '/' + file)
+        if(len(self.directories) > 0):      
+            for directory in self.directories:
+                print('  ' + str(directory.dir_path) + '/')
+                directory.print_paths(2)        
+
+    def clear(self):
+        # Clear virtual filesystem
+        if(len(self.files) > 0):
+            del self.files[:]
+        if(len(self.directories) > 0):      
+            del self.directories[:]
+        self.dir_name = ""
+
+class Directory(Root):
+# The directory object is derived from the root
+# Each directory contains it's level of files
+# and directories.
+
+# Directory levels are created recursively
+
+    dir_path = ""
+
+    def __init__(self, name, path):
+        self.dir_name = name
+        self.dir_path = path + '/' + self.dir_name
+        self.directories = []
+        self.files = []
+
+    def populate(self, folder):
+        # Get all current level files and directories
+        for item in os.listdir(folder):
+            if os.path.isdir(os.path.join(folder, item)):
+                found_Dir = Directory(item, str(folder))
+                self.directories.append(found_Dir)
+            if os.path.isfile(os.path.join(folder, item)):
+                self.files.append(item)
+
+        # Populate all current level directories recursively
+        for directory in self.directories:
+            directory.populate(folder + '/' + str(directory))   
+
+    def print_contents(self, level):
+        # Print current level contents and recurse deeper
+        if(len(self.files) > 0):
+            for file in self.files:
+                print(level * 2 * ' ' + '- ' + file)
+        if(len(self.directories) > 0):
+            for directory in self.directories:
+                print((level * 2 * ' '), end="")
+                print(str(directory) + '/')
+                directory.print_contents(level + 1)
+                
+    def print_paths(self, level):
+        # Print current level contents and recurse deeper
+        if(len(self.files) > 0):
+            for file in self.files:
+                print(level * 2 * ' ' + self.dir_path + '/' + file)
+        if(len(self.directories) > 0):
+            for directory in self.directories:
+                print((level * 2 * ' '), end="")
+                print(str(directory.dir_path) + '/')
+                directory.print_paths(level + 1)
+        
+    def __repr__(self):
+        return str(self.dir_name)
+    
+    def __str__(self):
+        return str(self.dir_name)
+	  </code>
+	  </pre>
+	</div>
+    </div>
+	<hr>
+  </div>
+
+  <br>
+
+  <div class = "row">
+    <div class = "pagehd">
+      <h2>Representing Recursive Data on a Webserver</h2>
+	  <hr>
+    </div>
+    <div class="ct">
+	<div class="container-fluid">
+	
+      <li>I run my webservers using the Django Python Web Framework. One of the reasons that Django is great is that it allows you to easily display variables from a Python backend in HTML templates on the frontend (provided they can be represented as a string).</li>
+	  <br><br>
+	  <li>The real challenge here is displaying the Root data structure (containing the recursively mapped directory information) with a template.</li> 
+      
+	  <br>
+
+	  <h4><i>views.py</i></h4>
+	  <pre>
+	  <code>
+def view_hierarchy(request):
+    root = Root()
+    root.populate("fs_demo")
+    return render(request, 'base/view_hierarchy.html', {'root':root})
+	  </pre>
+	  </code>
+	  
+	  <br><br>
+	  
+	  <li>A great solution is to make your Django HTML templates similarly recursive. This solution mirrors our initial mapping exactly by using one root template to display a list of the top level files and directories.</li>
+
+	  <br><br>  
+	  
+	  <h4><i>view_hierarchy.html</i></h4>
+	  <pre>
+	  <code>
+&lt;div class="container"&gt;
+  &lt;h3&gt;Root Directory: &#123;&#123;root.dir_name&#125;&#125;/&lt;/h3&gt;
+  &lt;br&gt;
+  &lt;p&gt;&#123;&#123;root.dir_name&#125;&#125;/&lt;/p&gt;
+  &lt;ul&gt;
+	&#123;% with root.files as files %&#125;
+	&#123;% for file in files %&#125;
+	  &lt;p&gt;* &#123;&#123;file&#125;&#125;&lt;/p&gt;
+	&#123;% endfor %&#125;
+	&#123;% endwith %&#125;
+
+	&#123;% with root.directories as dir %&#125;
+	&#123;% include "base/direc_contents.html" %&#125;
+	&#123;% endwith %&#125;
+  &lt;/ul&gt;
+&lt;/div&gt;
+	</code>
+	</pre>
+	
+	<br>
+	<p>The top level template inserts the recursive template for each directory. The same replacement happens in the recursive template for every lower level directory.</p>
+	<br>
+	
+	<h4><i>direc_contents.html</i></h4>
+	<pre>
+	<code>
+&#123;% for direc in dir %&#125;
+  &lt;p&gt;&#123;&#123; direc.dir_name &#125;&#125;/&lt;/p&gt;
+  &lt;ul&gt;
+    &#123;% with direc.files as files %&#125;    
+    &#123;% for file in files %&#125;
+	  &lt;p&gt;* &#123;&#123;file&#125;&#125;&lt;/p&gt;
+    &#123;% endfor %&#125;
+    &#123;% endwith %&#125;
+		
+    &#123;% with direc.directories as dir %&#125;
+    &#123;% include "base/direc_contents.html" %&#125;
+    &#123;% endwith %&#125;
+  &lt;/ul&gt;
+&#123;% endfor %&#125;
+    </pre>
+	</code>
+	  <p>The result is a quick way to generate a perfectly preserved representation of any directory hierarchy on your server. See the demo above!</p>
+	</div>
+	</div>
+	<hr>
+  </div>
+</div>
+</div>
+
 {% endblock %}
