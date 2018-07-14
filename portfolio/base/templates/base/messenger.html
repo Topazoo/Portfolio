@@ -1,4 +1,50 @@
 {% extends 'base/base.html' %}
 {% block content %}
-<h1 align="center">Messenger Page</h1>
+{% csrf_token %}
+
+<div class = "pagect">
+<div class="container-fluid">
+  <div class = "row">
+    <div class = "pagehd">
+	  <h1 align="center">Messenger App for the Gear S3 Smartwatch</h1>
+	  <h4 align="center">(https://github.com/Topazoo/Gear_S3_Wifi_Messaging)</h4>
+	</div>
+  </div>
+
+  <div class = "row">
+    <div class = "pagehd">
+      <h2>The Concept</h2>
+	  <hr>
+    </div>
+    <div class="ct">
+	<div class="container-fluid">
+      <li>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy. I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
+	  <br><br>
+	  <li><b>The code below allows a webserver's frontend to dynamically display the server's underlying filesystem.</b></li>
+    </div>
+	</div>
+	<hr>
+  </div>
+
+  <div class = "row">
+    <div class = "pagehd">
+	  <h2>Server Demo</h2>
+	  <hr>
+    </div>
+	<div class="ct">
+	  <div class="container-fluid">
+		<div class="col-md-12">
+		  <div class="col-md-6"  align="center" style="padding-top: 1em; padding-bottom: 1em;">
+			<button id="snd-msg">Send Message</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<hr>
+  </div>
+ </div>
+ </div>
+
+  <br>
+  
 {% endblock %}

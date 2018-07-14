@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^vr_game/$', views.vr_game),
     url(r'^vr_tracking/$', views.vr_tracking),
     url(r'^django_fs/$', views.django_fs),
+    url(r'^send_message/*', views.send_message, name='send_message'),
+
 ] 
