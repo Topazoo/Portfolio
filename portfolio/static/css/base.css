@@ -1,0 +1,131 @@
+body {
+    background-color: #F1F7ED;
+    padding-bottom: 2%;
+}
+
+.header {
+	font-family: 'Noto Serif', serif;
+	font-size: 200px;
+	text-align: center;
+	background-color: #91C7B1;
+	color: #F1F7ED;
+    padding: 20px 20px 20px 40px;
+}
+
+.header > h1 {
+	font-size: 40px;
+	padding-bottom: 10px;
+}
+
+.header > p {
+	font-size: 20px;
+}
+
+.nav-pills > li {
+	float:none;
+    display:inline-block;
+    font-size: 20px;
+	font-family: 'Noto Serif', serif;
+}
+
+.nav-pills > li a {
+	background-color: #FFFFFF;
+	color: #91C7B1;
+}
+
+.navbk {
+	background-color: #FFFFFF;
+    padding: 10px 10px 10px 20px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: #AEE5D8;
+}
+
+.nav-pills {
+	text-align: center;
+}
+
+.content-container {
+    width: 95%;
+    background-color: White;
+    border: 2px solid black;
+    margin: auto;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #F1F7ED;
+}
+
+footer {
+  position:fixed;
+  right:0;
+  bottom:0;
+  padding-right: 10px;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.pagect{
+	font-family: 'Noto Serif', serif;
+}
+
+.pagehd {
+	font-size: 25px;
+	padding-bottom: 5px;
+	color: #91C7B1;
+	font-family: 'Noto Serif', serif;
+}
+
+.homect {
+	font-family: 'Noto Serif', serif;
+	font-size: 15px;
+	color:black;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.mybtn{
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	background-color: #91C7B1;
+	color: white;
+}
+
+.ct {
+	padding-left: 15px;
+	color: #1A281F;
+}
+
+.pagebk {
+	background-color: rgba(255, 255, 255, 1);
+	width: 97%;
+	margin: auto;
+	border-color: rgba(174,229,216, 1);
+	border-style: solid;
+	padding: 25px;
+}
