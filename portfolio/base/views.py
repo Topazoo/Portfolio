@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from directory_tree import Root
   
 def home(request):     
     return render(request, 'base/home.html', {})
@@ -16,4 +17,6 @@ def vr_tracking(request):
     return render(request, 'base/vr_tracking.html', {})
 
 def django_fs(request):
-    return render(request, 'base/django_fs.html', {})
+    root = Root()
+    root.populate("fs_demo")
+    return render(request, 'base/django_fs.html', {'root':root})

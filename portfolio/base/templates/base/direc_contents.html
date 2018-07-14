@@ -1,0 +1,15 @@
+{% for direc in dir %}
+    <p>{{ direc.dir_name }}/</p>
+	<ul>
+		{% with direc.files as files %}
+	    
+		{% for file in files %}
+	      <p>* {{file}}</p>
+		{% endfor %}
+		{% endwith %}
+		
+		{% with direc.directories as dir %}
+        {% include "base/direc_contents.html" %}
+        {% endwith %}
+	</ul>
+{% endfor %}
