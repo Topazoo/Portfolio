@@ -32,6 +32,18 @@
     </div>
 	<div class="ct">
 	  <div class="container-fluid">
+		<form name="dir-form", method="post">
+		{% csrf_token %}
+	  	<label for="dir">Choose a directory: </label>
+		<select id="dir" name="dir">
+		<option value="fs_demo/">fs_demo/</option>
+		<option value="fs_demo/dir_1/">fs_demo/dir_1/</option>
+		<option value="fs_demo/dir_1/dir_1_1/">fs_demo/dir_1/dir_1_1/</option>
+		<option value="fs_demo/dir_2/">fs_demo/dir_2/</option>
+		<option value="fs_demo/dir_2/dir_2_1/">fs_demo/dir_2/dir_2_1/</option>
+		</select>
+		<button id="submit" name="submit">Go!</button>
+		</form>
 	    <h3>Root Directory: {{root.dir_name}}/</h3>
 	    <br>
 	    <p>{{root.dir_name}}/</p>

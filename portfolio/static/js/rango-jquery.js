@@ -25,16 +25,17 @@ $.ajaxSetup({
 
 $(document).ready(function() {
     $("#snd-msg").click(function() {
-		message = prompt("Please enter a message to send");
-		number = prompt("Please enter a number to send it to");
-		carrier= prompt("Please enter the carrier (e.g. Verizon)");
+		message = $('#message').val();
+		number = $('#phone').val();
+		carrier= $('#carrier').val();
+		from_number = "4152094084";
 		token = getCookie('csrftoken');
 		
 		$.ajax({
 				"type": "POST",
 				"dataType": "json",
 				"url": '/send_message',
-				"data": {'message': message, 'to_number': number, 'carrier': carrier, 'csrfmiddlewaretoken': token},
+				"data": {'message': message, 'to_number': number, 'from_number': from_number, 'carrier': carrier, 'csrfmiddlewaretoken': token},
 				"success": function(response) {
 					if(response.code == 'success') { 
 						alert('Your message has been sent'); 

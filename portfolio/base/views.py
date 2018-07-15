@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template import RequestContext
 from django.http import HttpResponse
 from directory_tree import Root
 import requests
@@ -46,6 +47,9 @@ def vr_tracking(request):
     return render(request, 'base/vr_tracking.html', {})
 
 def django_fs(request):
+    direc = "fs_demo"
+    if request.method == 'POST':
+        direc = request.POST['dir'][:-1:]
     root = Root()
-    root.populate("fs_demo")
-    return render(request, 'base/django_fs.html', {'root':root})
+    root.populate(direc)
+    return render(request, 'base/django_fs.html', {'root':root}, context_instance=RequestContext(request))
