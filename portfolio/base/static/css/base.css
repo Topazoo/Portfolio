@@ -129,3 +129,8 @@ footer {
 	border-style: solid;
 	padding: 25px;
 }
+
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+ }

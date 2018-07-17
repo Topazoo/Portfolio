@@ -129,3 +129,7 @@ footer {
 	border-style: solid;
 	padding: 25px;
 }
+
+.concept {
+	padding-left: -20px;
+}
