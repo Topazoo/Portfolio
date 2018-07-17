@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% block content %} 
+{% csrf_token %}
+
+<div class="pagect">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Messenger App for the Gear S3 Smartwatch</h1>
+                <h4 align="center">(https://github.com/Topazoo/Gear_S3_Wifi_Messaging)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/messenger">The Concept</a></li>
+                <li role="presentation"><a href="/messenger/client_code">Client Code</a></li>
+                <li role="presentation"><a href="/messenger/server_code">Server Code</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>Sending Text Messages from The Server</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <li>The watch has no built in text messaging server, so I built this server to send messages to phones using the SMTP email protocol. The server sends the message from a Gmail address in <i>config.ini</i>.</li>
+                    <br>
+                    <li>In the code below, messages from the client are received as POST requests where they are parsed and sent as text messages. See the demo above!</li>
+                    <br>
+                    <h4><i>views.py</i></h4>
+                    <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Gear_S3_Wifi_Messaging/blob/master/server/dispatch/base/views.py?footer=0"></script>
+                    <br>
+                    <h4><i>models.py</i></h4>
+                    <script src="http://gist-it.appspot.com/https://github.com/Topazoo/Gear_S3_Wifi_Messaging/blob/master/server/dispatch/base/models.py?slice=43:52&footer=0"></script>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

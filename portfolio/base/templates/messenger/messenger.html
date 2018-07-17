@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %} 
+{% block content %} 
+{% csrf_token %}
+
+<div class="pagect">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Messenger App for the Gear S3 Smartwatch</h1>
+                <h4 align="center">(https://github.com/Topazoo/Gear_S3_Wifi_Messaging)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/messenger">The Concept</a></li>
+                <li role="presentation"><a href="/messenger/client_code">Client Code</a></li>
+                <li role="presentation"><a href="/messenger/server_code">Server Code</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>The Concept</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <li>I recently bought a Gear S3 Classic smartwatch. When I paired it with my iPhone, I discovered that I could receive messages but not send them. I set out to build an application to allow me to send messages from my watch.</li>
+                    <br>
+                    <br>
+                    <li><b>The code below is a server for sending messages and a native messaging application for the Gear S3 Smartwatch.</b></li>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>Server Demo</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <div class="col-md-12">
+                        <div>
+                            <label for="phone">Enter a message: </label>
+                            <input type="text" id="message" name="message">
+                            <br>
+                            <br>
+                            <label for="phone">Enter a phone number: </label>
+                            <input type="text" id="phone" name="phone" placeholder="e.g. 4152094084">
+                            <br>
+                            <br>
+                            <label for="carrier">Choose a carrier: </label>
+                            <select id="carrier" name="carrier">
+                                <option value="Verizon">Verizon</option>
+                                <option value="AT&T">AT&T</option>
+                                <option value="Sprint">Sprint</option>
+                                <option value="TMobile">TMobile</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="col-md-6" align="center" style="padding-top: 1em; padding-bottom: 1em;">
+                                <button id="snd-msg">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

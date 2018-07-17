@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% block content %} 
+{% csrf_token %}
+
+<div class="pagect">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Messenger App for the Gear S3 Smartwatch</h1>
+                <h4 align="center">(https://github.com/Topazoo/Gear_S3_Wifi_Messaging)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/messenger">The Concept</a></li>
+                <li role="presentation"><a href="/messenger/client_code">Client Code</a></li>
+                <li role="presentation"><a href="/messenger/server_code">Server Code</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>Sending Messages from The Client</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <li>The hard part was writing a client that runs natively on the watch. The code is below, written in C for the Tizen Wearable 3.0+ OS.</li>
+                    <br>
+                    <li>It uses the Tizen HTTP library to get text from the watch and transmit it to the messaging server when a button is pressed.</li>
+                    <br>
+                    <h4><i>watch_sample.c</i></h4>
+                    <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Gear_S3_Wifi_Messaging/blob/master/client/src/watch_sample.c?footer=0"></script>
+                    <br>
+                    <li>The result is a native application that allows Gear S3 users to send texts over wifi.</li>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

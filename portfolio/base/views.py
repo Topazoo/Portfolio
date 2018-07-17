@@ -6,6 +6,9 @@ from Bot import Bot
 import requests
 import json
 
+def home(request):     
+    return render(request, 'base/home.html', {})
+
 def send_message(request):
     if request.method == 'POST':
         text = request.POST['message']
@@ -31,11 +34,13 @@ def send_message(request):
         return HttpResponse(json.dumps({'code': 'success'}), content_type="application/json")
     return HttpResponse(json.dumps({'code': 'fail'}), content_type="application/json")
 
-def home(request):     
-    return render(request, 'base/home.html', {})
 
 def messenger(request):
-    return render(request, 'base/messenger.html', {})
+    return render(request, 'messenger/messenger.html', {})
+def messenger_client(request):
+    return render(request, 'messenger/messenger_client.html', {})
+def messenger_server(request):
+    return render(request, 'messenger/messenger_server.html', {})
     
 def prefix_subreddit(subreddit):
     return "r/" + subreddit
@@ -56,18 +61,31 @@ def get_top_user(subreddit):
 def issue_bot(request):
    
     top_users = None
+    subreddit = "None"
 
     if request.method == 'POST':
         subreddit = request.POST['subreddit']
         top_users = get_top_user(subreddit)
     
-    return render(request, 'base/issue_bot.html', {'users': top_users})
+    return render(request, 'issue_bot/issue_bot.html', {'users': top_users, 'subreddit':subreddit})
+
+def issue_bot_bot(request):    
+    return render(request, 'issue_bot/issue_bot_bot.html', {})
+
+def issue_bot_analyzer(request):    
+    return render(request, 'issue_bot/issue_bot_analyzer.html', {})
+
+def issue_bot_paper(request):    
+    return render(request, 'issue_bot/issue_bot_paper.html', {})
     
 def vr_game(request):
     return render(request, 'base/vr_game.html', {})
     
 def vr_tracking(request):
     return render(request, 'base/vr_tracking.html', {})
+
+def django_fs_code(request):
+    return render(request, 'django_fs/django_fs_code.html', {})
 
 def django_fs(request):
    
@@ -79,4 +97,4 @@ def django_fs(request):
     root = Root()
     root.populate(direc)
    
-    return render(request, 'base/django_fs.html', {'root':root}, context_instance=RequestContext(request))
+    return render(request, 'django_fs/django_fs.html', {'root':root}, context_instance=RequestContext(request))

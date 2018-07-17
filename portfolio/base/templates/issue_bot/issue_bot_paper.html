@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %} 
+{% block content %}
+
+<div class="pagect">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Tracking Political Issue Salience Using Machine Learning</h1>
+                <h4 align="center">(https://github.com/Topazoo/Issue_Saliency_Analysis_Bot)</h4>
+            </div>
+				</div>
+
+				<br>
+				
+				<div class="navigation">
+					<ul class="nav nav-pills">
+							<li role="presentation"><a href="/issue_bot">The Concept</a></li>
+							<li role="presentation"><a href="/issue_bot/bot_code">Bot Code</a></li>
+							<li role="presentation"><a href="/issue_bot/analyzer_code">Analyzer Code</a></li>
+							<li role="presentation"><a href="/issue_bot/research_paper">Research Paper</a></li>
+					</ul>
+			</div>
+
+			<br>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>The Concept</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <li>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy. I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
+                    <br>
+                    <br>
+                    <li><b>The code below allows a webserver's frontend to dynamically display the server's underlying filesystem.</b></li>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>Getting Top Users Demo</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <form name="sub-form" , method="post">
+                        {% csrf_token %}
+                        <label for="subreddit">Enter a subreddit name: </label>
+                        <input type="text" id="subreddit" name="subreddit" placeholder="e.g. r/politics">
+                        <button id="submit" name="submit">Go!</button>
+                        {% if users == None %}
+                          <p>It may take a minute or so to calculate the top users</p>
+                        {% endif %}
+                    </form>
+                    <div class="col-xs-12" align="center">
+                        {% if users != None %}
+                          <br>
+                          <h4>Top users in r/{{subreddit}}</h4>
+												  <br> 
+												  {% for user in users %}
+                            <div class="col-xs-4">
+                              <p>{{user.name}}</p>
+                            </div>
+												  {% endfor %}
+												{% endif %}
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}

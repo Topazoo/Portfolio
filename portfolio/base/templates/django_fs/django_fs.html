@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %} 
+{% block content %}
+
+<div class="pagect">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Mapping Filesystems in Django</h1>
+                <h4 align="center">(https://github.com/Topazoo/Django_Virtual_File_Hierarchy)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/django_fs">The Concept</a></li>
+                <li role="presentation"><a href="/django_fs/code">The Code</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>The Concept</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <li>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy. I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
+                    <br>
+                    <br>
+                    <li><b>The code below allows a webserver's frontend to dynamically display the server's underlying filesystem.</b></li>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>Demo</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+
+                    <form name="dir-form" , method="post">
+                        {% csrf_token %}
+                        <label for="dir">Choose a directory: </label>
+                        <select id="dir" name="dir">
+                            <option value="fs_demo/">fs_demo/</option>
+                            <option value="fs_demo/dir_1/">fs_demo/dir_1/</option>
+                            <option value="fs_demo/dir_1/dir_1_1/">fs_demo/dir_1/dir_1_1/</option>
+                            <option value="fs_demo/dir_2/">fs_demo/dir_2/</option>
+                            <option value="fs_demo/dir_2/dir_2_1/">fs_demo/dir_2/dir_2_1/</option>
+                        </select>
+                        <button id="submit" name="submit">Go!</button>
+                    </form>
+
+                    <h3>Root Directory: {{root.dir_name}}/</h3>
+                    <br>
+                    <p>{{root.dir_name}}/</p>
+                    <ul>
+                        {% with root.files as files %} 
+                          {% for file in files %}
+                            <p>- {{file}}</p>
+                          {% endfor %} 
+                        {% endwith %} 
+                        {% with root.directories as dir %} 
+                          {% include "django_fs/direc_contents.html" %} 
+                        {% endwith %}
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
