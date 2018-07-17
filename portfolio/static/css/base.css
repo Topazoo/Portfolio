@@ -9,7 +9,7 @@ body {
 	text-align: center;
 	background-color: #91C7B1;
 	color: #F1F7ED;
-    padding: 20px 20px 20px 40px;
+    padding: 40px 20px 20px 40px;
 }
 
 .header > h1 {
@@ -84,6 +84,14 @@ footer {
 	padding-bottom: 5px;
 	color: #91C7B1;
 	font-family: 'Noto Serif', serif;
+	letter-spacing: .2px;
+}
+
+.pagetitle {
+	font-size: 25px;
+	color: #91C7B1;
+	font-family: 'Noto Serif', serif;
+	letter-spacing: .4px;
 }
 
 .homect {
@@ -117,8 +125,9 @@ footer {
 }
 
 .ct {
-	padding-left: 15px;
+	padding-left: 30px;
 	color: #1A281F;
+	line-height: 24px;
 }
 
 .pagebk {
@@ -130,6 +139,19 @@ footer {
 	padding: 25px;
 }
 
-.concept {
-	padding-left: -20px;
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+ }
+
+ a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+	background: none;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+	background: none;
 }
