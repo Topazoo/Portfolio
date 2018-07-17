@@ -9,9 +9,7 @@
                 <h4 align="center">(https://github.com/Topazoo/Django_Virtual_File_Hierarchy)</h4>
             </div>
         </div>
-
         <br>
-
         <div class="navigation">
             <ul class="nav nav-pills">
                 <li role="presentation"><a href="/django_fs">The Concept</a></li>
@@ -19,55 +17,54 @@
                 <li role="presentation"><a href="/django_fs/templates">The Templates</a></li>
             </ul>
         </div>
-
         <br>
-
         <br>
-
         <div class="row">
             <div class="pagehd">
                 <h2>Representing Recursive Data on a Webserver</h2>
                 <hr>
             </div>
             <div class="ct">
-                <div class="container-fluid">
-                    <li>I run my webservers using the Django Python Web Framework. One of the reasons that Django is great is that it allows you to easily display variables from a Python backend in HTML templates on the frontend (provided they can be represented as a string).</li>
-                    <br>
-                    <br>
-                    <li>The real challenge here is displaying the Root data structure (containing the recursively mapped directory information) with a template.</li>
-                    <br>
-
-                    <h4><i>views.py</i></h4>
-                    <pre>
-	                <code>
+                <div class="col-xs-12">
+                    <div class="col-xs-4">
+                        <br>
+                        <br>
+                        <li>I run my webservers using the Django Python Web Framework.</li>
+                        <br>
+                        <li>Django is great because it allows you to easily display variables from a Python backend in the frontend HTML templates.</li>
+                    </div>
+                    <div class="col-xs-8">
+                        <h4><i>views.py</i></h4>
+                        <pre>
+	              <code>
 def view_hierarchy(request):
     root = Root()
     root.populate("fs_demo")
     return render(request, 'base/view_hierarchy.html', {'root':root})
-	                </pre>
-                    </code>
-
-                    <br>
-                    <br>
-
-                    <li>A great solution is to make your Django HTML templates similarly recursive. This solution mirrors our initial mapping exactly by using one root template to display a list of the top level files and directories.</li>
-
-                    <br>
-                    <br>
-
-                    <h4><i>view_hierarchy.html</i></h4>
-                    <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/templates/view_hierarchy.html?footer=0"></script>
-                    <br>
-                    <li>The top level template inserts the recursive template for each directory. The same replacement happens in the recursive template for every lower level directory.</li>
-                    <br>
-                    <h4><i>direc_contents.html</i></h4>
-                    <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/templates/direc_contents.html?footer=0"></script>
-                    <br>
-                    <li>The result is a quick way to generate a perfectly preserved representation of any directory hierarchy on your server. See the demo above!</li>
+	              </pre>
+                        </code>
+                        <br>
+                        <br>
+                    </div>
                 </div>
+                <li>The real challenge here is displaying the Root data structure (containing the recursively mapped directory information) with a template.</li>
+                <br>
+                <br>
+                <li>A great solution is to make your Django HTML templates similarly recursive. This solution mirrors our initial mapping exactly by using one root template to display a list of the top level files and directories.</li>
+                <br>
+                <br>
+                <h4><i>view_hierarchy.html</i></h4>
+                <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/templates/view_hierarchy.html?footer=0"></script>
+                <br>
+                <li>The top level template inserts the recursive template for each directory. The same replacement happens in the recursive template for every lower level directory.</li>
+                <br>
+                <h4><i>direc_contents.html</i></h4>
+                <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/templates/direc_contents.html?footer=0"></script>
+                <br>
+                <li>The result is a quick way to generate a perfectly preserved representation of any directory hierarchy on your server. See the demo above!</li>
             </div>
-            <hr>
         </div>
+        <hr>
     </div>
 </div>
 {% endblock %}
