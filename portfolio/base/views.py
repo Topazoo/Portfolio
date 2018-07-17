@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.template import RequestContext
 from django.http import HttpResponse
 from directory_tree import Root
 from Bot import Bot
@@ -7,7 +6,12 @@ import requests
 import json
 
 def home(request):     
-    return render(request, 'base/home.html', {})
+    return render(request, 'home/home.html', {})
+def home_site(request):     
+    return render(request, 'home/home_site.html', {})
+def home_about(request):     
+    return render(request, 'home/home_about.html', {})
+
 
 def send_message(request):
     if request.method == 'POST':
@@ -94,4 +98,4 @@ def django_fs(request):
     root = Root()
     root.populate(direc)
    
-    return render(request, 'django_fs/django_fs.html', {'root':root}, context_instance=RequestContext(request))
+    return render(request, 'django_fs/django_fs.html', {'root':root})

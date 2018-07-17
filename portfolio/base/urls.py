@@ -5,7 +5,9 @@ from django.contrib import admin
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
+    url(r'^$', views.home),
+    url(r'^site/$', views.home_site),
+    url(r'^about/$', views.home_about),
 
     url(r'^messenger/$', views.messenger),
     url(r'^send_message/*', views.send_message),
