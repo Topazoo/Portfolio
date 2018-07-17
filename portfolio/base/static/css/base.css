@@ -84,6 +84,14 @@ footer {
 	padding-bottom: 5px;
 	color: #91C7B1;
 	font-family: 'Noto Serif', serif;
+	letter-spacing: .2px;
+}
+
+.pagetitle {
+	font-size: 25px;
+	color: #91C7B1;
+	font-family: 'Noto Serif', serif;
+	letter-spacing: .4px;
 }
 
 .homect {
@@ -117,8 +125,9 @@ footer {
 }
 
 .ct {
-	padding-left: 15px;
+	padding-left: 30px;
 	color: #1A281F;
+	line-height: 24px;
 }
 
 .pagebk {
