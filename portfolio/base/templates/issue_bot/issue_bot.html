@@ -8,20 +8,20 @@
                 <h1 align="center">Tracking Political Issue Salience Using Machine Learning</h1>
                 <h4 align="center">(https://github.com/Topazoo/Issue_Saliency_Analysis_Bot)</h4>
             </div>
-				</div>
+		</div>
 
-				<br>
+		<br>
 				
-				<div class="navigation">
-					<ul class="nav nav-pills">
-							<li role="presentation"><a href="/issue_bot">The Concept</a></li>
-							<li role="presentation"><a href="/issue_bot/bot_code">Bot Code</a></li>
-							<li role="presentation"><a href="/issue_bot/analyzer_code">Analyzer Code</a></li>
-							<li role="presentation"><a href="/issue_bot/research_paper">Research Paper</a></li>
-					</ul>
-			</div>
+		<div class="navigation">
+			<ul class="nav nav-pills">
+                <li role="presentation"><a href="/issue_bot">The Concept</a></li>
+				<li role="presentation"><a href="/issue_bot/research_paper">Research Paper</a></li>
+				<li role="presentation"><a href="/issue_bot/bot_code">Bot Code</a></li>
+				<li role="presentation"><a href="/issue_bot/analyzer_code">Analyzer Code</a></li>
+			</ul>
+		</div>
 
-			<br>
+		<br>
 
         <div class="row">
             <div class="pagehd">
@@ -59,13 +59,13 @@
                         {% if users != None %}
                           <br>
                           <h4>Top users in r/{{subreddit}}</h4>
-												  <br> 
-												  {% for user in users %}
+						  <br> 
+						  {% for user in users %}
                             <div class="col-xs-4">
                               <p>{{user.name}}</p>
                             </div>
-												  {% endfor %}
-												{% endif %}
+						  {% endfor %}
+						{% endif %}
                     </div>
                 </div>
             </div>

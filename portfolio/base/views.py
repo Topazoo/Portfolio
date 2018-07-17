@@ -71,10 +71,8 @@ def issue_bot(request):
 
 def issue_bot_bot(request):    
     return render(request, 'issue_bot/issue_bot_bot.html', {})
-
 def issue_bot_analyzer(request):    
     return render(request, 'issue_bot/issue_bot_analyzer.html', {})
-
 def issue_bot_paper(request):    
     return render(request, 'issue_bot/issue_bot_paper.html', {})
     
@@ -86,7 +84,6 @@ def vr_tracking(request):
 
 def django_fs_code(request):
     return render(request, 'django_fs/django_fs_code.html', {})
-
 def django_fs(request):
    
     direc = "fs_demo"
