@@ -1,4 +1,44 @@
-{% extends 'base/base.html' %}
-{% block content %}
-<h1 align="center">Tracking Page</h1>
+{% extends 'base/base.html' %} 
+{% block content %} 
+
+<div class="pagect">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Mapping Real Steps to Virtual Reality Using Optical Mice</h1>
+                <h4 align="center">(https://github.com/Topazoo/VR_Motion_Tracking)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/vr_tracking">The Concept</a></li>
+                <li role="presentation"><a href="/vr_tracking/code">The Code</a></li>
+                <li role="presentation"><a href="/vr_tracking/gui">The GUI</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="pagehd">
+                <h2>Running the Code With A GUI</h2>
+                <hr>
+            </div>
+            <div class="ct">
+                <div class="container-fluid">
+                    <li>The code for mapping directory hierarchies is written in Python and can be found below.</li>
+                    <br>
+                    <li>It uses a <i>Root</i> class to map the files and directories in any chosen directory, and then creates <i>Directory</i> classes for each directory found. The <i>Directory</i> classes then do the same for the directory they were created for. The resulting data structure preserves the hierarchy of the real directory.</li>
+                    <br>
+                    <h4><i>GUI_Layer.py</i></h4>
+                    <script src="http://gist-it.appspot.com/http://github.com/Topazoo/VR_Motion_Tracking/blob/master/GUI_Layer.py?footer=0"></script>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
 {% endblock %}

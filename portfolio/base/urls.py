@@ -20,10 +20,15 @@ urlpatterns = [
     url(r'^issue_bot/research_paper/$', views.issue_bot_paper),
    
     url(r'^vr_game/$', views.vr_game),
+    url(r'^vr_game/code/$', views.vr_game_code),
+    url(r'^vr_game/scripts/$', views.vr_game_scripts),
     
     url(r'^vr_tracking/$', views.vr_tracking),
+    url(r'^vr_tracking/code/$', views.vr_tracking_code),
+    url(r'^vr_tracking/gui/$', views.vr_tracking_gui),
 
     url(r'^django_fs/$', views.django_fs),
     url(r'^django_fs/code/$', views.django_fs_code),
+    url(r'^django_fs/templates/$', views.django_fs_templates),
 
 ] 

@@ -31,7 +31,7 @@ def send_message(request):
         data = dict(message=text,to_number=to_number, from_number=from_number, carrier=carrier, csrfmiddlewaretoken=csrftoken)
         
         # Send data in a POST request
-        r = client.post(url, data=data, headers=dict(Referer=url))
+        client.post(url, data=data, headers=dict(Referer=url))
         
         # Return response to AJAX request
         return HttpResponse(json.dumps({'code': 'success'}), content_type="application/json")
@@ -110,8 +110,14 @@ def issue_bot(request):
 # -----------------------------------------------------------
 
 # ----------------------- Game Pages ------------------------
+def vr_game_code(request):
+    ''' VR Game Code Page '''
+    return render(request, 'vr_game/vr_game_code.html', {})
+def vr_game_scripts(request):
+    ''' VR Game Scripts Page '''
+    return render(request, 'vr_game/vr_game_scripts.html', {})
 def vr_game(request):
-    ''' VR Home Page '''
+    ''' VR Game Home Page '''
     return render(request, 'vr_game/vr_game.html', {})
 # -----------------------------------------------------------
 
@@ -131,6 +137,9 @@ def vr_tracking(request):
 def django_fs_code(request):
     ''' Filesystem Code Page'''
     return render(request, 'django_fs/django_fs_code.html', {})
+def django_fs_templates(request):
+    ''' Filesystem Template Page'''
+    return render(request, 'django_fs/django_fs_templates.html', {})
 def django_fs(request):
     ''' Filesystem Home Page'''
    
