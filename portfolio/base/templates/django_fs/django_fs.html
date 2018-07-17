@@ -25,14 +25,14 @@
                             <hr>
                         </div>
                         <div class="ct">
-                            <div class="container-fluid">
-                                <li>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy.</li>
+                            <div class="container-fluid nopadding">
+                                <p>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy.</p>
                                 <br>
                                 <br>
-                                <li>I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
+                                <p>I set out to use recursion to quickly map directories stored on a server and display them to a web page.</p>
                                 <br>
                                 <br>
-                                <li><b>This code allows a webserver's frontend to dynamically display its underlying filesystem.</b></li>
+                                <p><b>This code allows a webserver's frontend to dynamically display its underlying filesystem.</b></p>
                                 <br>
                                 <br>
                             </div>
@@ -48,20 +48,27 @@
                             <hr>
                         </div>
                         <div class="ct">
-                            <div class="container-fluid">
+                            <div class="container-fluid nopadding">
                                 <form name="dir-form" , method="post">
                                     {% csrf_token %}
-                                    <label for="dir">Choose a directory: </label>
-                                    <select id="dir" name="dir">
+                                    <div class="col-md-12 nopadding">
+                                      <div class="col-md-10 nopadding">
+                                      <label for="dir">Choose a directory: </label>
+                                      <select class="form-control" id="dir" name="dir">
                                         <option value="fs_demo/">fs_demo/</option>
                                         <option value="fs_demo/dir_1/">fs_demo/dir_1/</option>
                                         <option value="fs_demo/dir_1/dir_1_1/">fs_demo/dir_1/dir_1_1/</option>
                                         <option value="fs_demo/dir_2/">fs_demo/dir_2/</option>
                                         <option value="fs_demo/dir_2/dir_2_1/">fs_demo/dir_2/dir_2_1/</option>
-                                    </select>
-                                    <button id="submit" name="submit">Go!</button>
+                                      </select>
+                                      </div>
+                                    <div class="col-md-2" style="padding-top: 25px;">
+                                      <button class="btn btn-light" id="submit" name="submit">Go!</button>
+                                    </div>
+                                    </div>
+                                  </div>
                                 </form>
-
+                                <br>
                                 <h3>Root Directory: {{root.dir_name}}/</h3>
                                 <br>
                                 <p>{{root.dir_name}}/</p>

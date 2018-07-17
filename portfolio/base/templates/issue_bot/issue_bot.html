@@ -29,11 +29,11 @@
                     <hr>
                 </div>
                 <div class="ct">
-                    <div class="container-fluid">
-                        <li>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy. I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
+                    <div class="container-fluid nopadding">
+                        <p>Some problems in computer science are naturally recursive, like mapping the contents of a filesystem. Every directory must be checked for directories which in turn must be checked for directories in a potentially infinite hierarchy. I set out to use recursion to quickly map directories stored on a server and display them to a web page.</li>
                         <br>
                         <br>
-                        <li><b>The code below allows a webserver's frontend to dynamically display the server's underlying filesystem.</b></li>
+                        <p><b>This code allows a webserver's frontend to dynamically display the server's underlying filesystem.</b></li>
                         <br>
                     </div>
                 </div>
@@ -47,12 +47,19 @@
                     <hr>
                 </div>
                 <div class="ct">
-                    <div class="container-fluid">
+                    <div class="container-fluid nopadding">
                         <form name="sub-form" , method="post">
                             {% csrf_token %}
-                            <label for="subreddit">Enter a subreddit name: </label>
-                            <input type="text" id="subreddit" name="subreddit" placeholder="e.g. r/politics">
-                            <button id="submit" name="submit">Go!</button>
+                            <div class="col-md-12 nopadding">
+                              <div class="col-md-10 nopadding">
+                                <label for="subreddit">Enter a subreddit name: </label>
+                                <input type="text" class="form-control" id="subreddit" name="subreddit" placeholder="e.g. r/politics">
+                              </div>
+                              <br>
+                              <div class="col-md-2" style="padding-top: 5px">
+                                <button class="btn btn-light" id="submit" name="submit">Go!</button>
+                              </div>
+                            </div>
                             {% if users == None %}
                             <br>
                             <div class="col-md-12 nopadding">

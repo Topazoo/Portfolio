@@ -30,14 +30,14 @@
                     <hr>
                 </div>
                 <div class="ct">
-                    <div class="container-fluid">
-                        <li>I recently bought a Gear S3 Classic smartwatch. When I paired it with my iPhone, I discovered that I could receive messages but not send them.</li>
+                    <div class="container-fluid nopadding">
+                        <p>I recently bought a Gear S3 Classic smartwatch. When I paired it with my iPhone, I discovered that I could receive messages but not send them.</p>
                         <br>
                         <br>
-                        <li>I set out to build an application to allow me to send messages from my watch.</li>
+                        <p>I set out to build an application to allow me to send messages from my watch.</p>
                         <br>
                         <br>
-                        <li><b>The code below is a server for sending messages and a native messaging application for the Gear S3 Smartwatch.</b></li>
+                        <p><b>The code below is a server for sending messages and a native messaging application for the Gear S3 Smartwatch.</b></p>
                     </div>
                     <br>
                     <br>
@@ -52,19 +52,17 @@
                     <hr>
                 </div>
                 <div class="ct">
-                    <div class="container-fluid">
+                    <div class="container-fluid nopadding">
                         <label for="phone">Enter a message: </label>
-                        <input type="text" id="message" name="message">
-                        <br>
+                        <input type="text" class="form-control" id="message" name="message">
                         <br>
                         <br>
                         <label for="phone">Enter a phone number: </label>
-                        <input type="text" id="phone" name="phone" placeholder="e.g. 4152094084">
-                        <br>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="e.g. 4152094084">
                         <br>
                         <br>
                         <label for="carrier">Choose a carrier: </label>
-                        <select id="carrier" name="carrier">
+                        <select class="form-control" id="carrier" name="carrier">
                             <option value="Verizon">Verizon</option>
                             <option value="AT&T">AT&T</option>
                             <option value="Sprint">Sprint</option>
@@ -74,7 +72,7 @@
                     <div class="col-md-12" align="center">
                         <br>
                         <br>
-                        <button id="snd-msg">Send Message</button>
+                        <button class="btn btn-light" id="snd-msg">Send Message</button>
                     </div>
                 </div>
             </div>
