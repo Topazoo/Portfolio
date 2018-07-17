@@ -1,25 +1,5 @@
-{% extends 'base/base.html' %} 
-{% block content %}
-
-<div class="pagect">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="pagehd">
-                <h1 align="center">Mapping Filesystems in Django</h1>
-                <h4 align="center">(https://github.com/Topazoo/Django_Virtual_File_Hierarchy)</h4>
-            </div>
-            <br>
-        </div>
-
-        <div class="navigation">
-            <ul class="nav nav-pills">
-                <li role="presentation"><a href="/django_fs">The Concept</a></li>
-                <li role="presentation"><a href="/django_fs/code">The Code</a></li>
-                <li role="presentation"><a href="/django_fs/templates">The Templates</a></li>
-            </ul>
-        </div>
-
-        <br>
+{% extends 'django_fs/django_fs_wrapper.html' %} 
+{% block data %}
 
         <div class="row">
             <div class="pagehd">
@@ -36,9 +16,6 @@
                     <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/directory_tree.py?footer=0"></script>
                 </div>
             </div>
-            <hr>
         </div>
-
-    </div>
-</div>
+        
 {% endblock %}

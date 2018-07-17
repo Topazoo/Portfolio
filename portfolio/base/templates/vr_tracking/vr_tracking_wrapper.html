@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %} 
+{% block content %} 
+
+<div class="pagect">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Mapping Real Steps to Virtual Reality Using Optical Mice</h1>
+                <h4 align="center">(https://github.com/Topazoo/VR_Motion_Tracking)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/vr_tracking">The Concept</a></li>
+                <li role="presentation"><a href="/vr_tracking/code">The Code</a></li>
+                <li role="presentation"><a href="/vr_tracking/gui">The GUI</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        {% block data %}
+          {% include "vr_tracking.html" %}
+          {% include "vr_tracking_code.html" %}
+          {% include "vr_tracking_gui.html" %}
+        {% endblock %}
+
+        <div class="col-md-12">
+            <hr>
+        </div>
+</div>
+
+
+{% endblock %}

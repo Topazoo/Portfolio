@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %} 
+{% block content %} 
+
+<div class="pagect">
+        <div class="row">
+            <div class="pagehd">
+                <h1 align="center">Creating A Game For The HTC VIVE</h1>
+                <h4 align="center">(https://github.com/Topazoo/VR_Shooting_Range_Unity)</h4>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="navigation">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="/vr_game">The Concept</a></li>
+                <li role="presentation"><a href="/vr_game/code">The Code</a></li>
+                <li role="presentation"><a href="/vr_game/scripts">The Scripts</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        {% block data %}
+          {% include "vr_game.html" %}
+          {% include "vr_game_code.html" %}
+          {% include "vr_game_scripts.html" %}
+        {% endblock %}
+
+        <div class="col-md-12">
+            <hr>
+        </div>
+</div>
+
+{% endblock %}

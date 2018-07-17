@@ -1,24 +1,6 @@
-{% extends 'base/base.html' %} 
-{% block content %}
+{% extends 'django_fs/django_fs_wrapper.html' %} 
+{% block data %}
 
-<div class="pagect">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="pagehd">
-                <h1 align="center">Mapping Filesystems in Django</h1>
-                <h4 align="center">(https://github.com/Topazoo/Django_Virtual_File_Hierarchy)</h4>
-          </div>
-          <br>
-        </div>
-        <div class="navigation">
-            <ul class="nav nav-pills">
-                <li role="presentation"><a href="/django_fs">The Concept</a></li>
-                <li role="presentation"><a href="/django_fs/code">The Code</a></li>
-                <li role="presentation"><a href="/django_fs/templates">The Templates</a></li>
-            </ul>
-        </div>
-        <br>
-        <br>
         <div class="row">
             <div class="pagehd">
                 <h2>Representing Recursive Data on a Webserver</h2>
@@ -65,7 +47,5 @@ def view_hierarchy(request):
                 <p>The result is a quick way to generate a perfectly preserved representation of any directory hierarchy on your server. See the demo!</p>
             </div>
         </div>
-        <hr>
-    </div>
-</div>
+
 {% endblock %}

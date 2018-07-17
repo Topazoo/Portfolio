@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %} 
+{% block content %} 
+{% csrf_token %}
+
+<div class="pagect">
+    <div class="row">
+        <div class="pagehd">
+            <h1 align="center">Messenger App for the Gear S3 Smartwatch</h1>
+            <h4 align="center">(https://github.com/Topazoo/Gear_S3_Wifi_Messaging)</h4>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="navigation">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="/messenger">The Concept</a></li>
+            <li role="presentation"><a href="/messenger/client_code">Client Code</a></li>
+            <li role="presentation"><a href="/messenger/server_code">Server Code</a></li>
+        </ul>
+    </div>
+
+    <br>
+
+    {% block data %}
+      {% include messenger.html %}
+      {% include messenger_client.html %}
+      {% include messenger_server.html %}
+    {% endblock %}
+
+    <div class="col-md-12">
+        <hr>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,25 +1,5 @@
-{% extends 'base/base.html' %} 
-{% block content %}
-
-<div class="pagect">
-        <div class="row">
-            <div class="pagehd">
-                <h1 align="center">Tracking Political Issue Salience Using Machine Learning</h1>
-                <h4 align="center">(https://github.com/Topazoo/Issue_Saliency_Analysis_Bot)</h4>
-            </div>
-            <br>
-		</div>
-
-		<div class="navigation">
-			<ul class="nav nav-pills">
-                <li role="presentation"><a href="/issue_bot">The Concept</a></li>
-				<li role="presentation"><a href="/issue_bot/research_paper">Research Paper</a></li>
-				<li role="presentation"><a href="/issue_bot/bot_code">Bot Code</a></li>
-				<li role="presentation"><a href="/issue_bot/analyzer_code">Analyzer Code</a></li>
-			</ul>
-		</div>
-
-		<br>
+{% extends 'issue_bot/issue_bot_wrapper.html' %} 
+{% block data %}
 
         <div class="row">
             <div class="ct">
@@ -27,7 +7,5 @@
                     <iframe src="https://drive.google.com/file/d/17L14uoawDWSVB6dhneb7gwUH3KhJhQNR/preview" width="100%" height="100%"></iframe>
                 </div>
             </div>
-            <hr>
         </div>
-</div>
 {% endblock %}
