@@ -38,12 +38,18 @@
 			<input type="text" id="subreddit" name="subreddit" placeholder="e.g. r/politics">
 			<button id="submit" name="submit">Go!</button>
 		</form>
-		  <br><br>
+		<br><br>
+		<div class="col-xs-12">
 		{% if users != None %}
-		  {% for user in users %}
-		    <p>{{user}}</p>
-		  {% endfor %}
+			{% for user in users %}
+			  <div class="col-xs-4">
+				  <p>{{user}}</p>
+			  </div>
+			{% endfor %}
+		{% else %}
+			<p>It may take a minute or so to calculate the top users</p>
 		{% endif %}
+		</div>
 		  
 	  </div>
 	</div>

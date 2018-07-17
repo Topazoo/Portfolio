@@ -11,26 +11,17 @@
 import praw
 from collections import Counter
 from Reddit import Subreddit, Post, User
-from Analyzer import Analyzer
 
 class Bot(object):
     """ Class to contain highest-order program operations
         @bot_name - The name of the Praw bot """
 
     def __init__(self, bot_name='193bot'):
-        # Open spreadsheets for inputs and results
-        #self.input_sheet = Spreadsheet("input/subreddits.xlsx")
-        #self.subreddit_output_sheet = Spreadsheet("output/subreddit_results.xlsx", False)
-        #self.user_output_sheet = Spreadsheet("output/user_results.xlsx", False)
-        #self.comment_output_sheet = Spreadsheet("output/comment_results.xlsx", False)
 
         self.reddit = praw.Reddit(bot_name)
 
         # Create a list of subreddits
         self.subreddits = []
-
-        # Class to analyze collected information
-        #self.analyzer = Analyzer(self.subreddits)
 
     def get_subreddits(self):
         """ Get info from the spreadsheet """
@@ -81,8 +72,3 @@ class Bot(object):
                     subreddit.top_posters.append(new_user)
                 except:
                     continue
-    def analyze(self, nouns_count=5):
-        """ Analyze all text
-            @nouns_count - The number of nouns to collect """
-
-        self.analyzer.analyze_all_text(nouns_count)
