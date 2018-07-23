@@ -1,5 +1,6 @@
 {% extends 'vr_tracking/vr_tracking_wrapper.html' %} 
 {% block data %} 
+{% load static %}
 
         <div class="row">
             <div class="pagehd">
@@ -7,7 +8,8 @@
                 <hr>
             </div>
             <div class="ct">
-                <div class="container-fluid nopadding">
+                <div class="col-md-12 nopadding">
+                  <div class="col-md-4">
                     <li>Movement is one of the least realistic parts of the current VR experience. It substitutes a button push for the physical act of walking. A device that translates physical movement to movement in virtual reality would fundamentally change the experience.</li>
                     <br>
                     <br>
@@ -15,7 +17,16 @@
                     <br>
                     <br>
                     <li><b>This code reads the speed and direction of multiple optical mice concurrently.</b></li>
+                    <br>
                 </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{% static "img/gui.png" %}" alt="My image"/>
+                    <br>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{% static "img/gui_running.png" %}" alt="My image"/>
+                </div>
+              </div>
             </div>
         </div>
 

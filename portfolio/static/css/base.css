@@ -127,7 +127,8 @@ footer {
 .ct {
 	padding-left: 30px;
 	color: #1A281F;
-	line-height: 24px;
+	line-height: 22px;
+	letter-spacing: .02px;
 }
 
 .pagebk {
@@ -148,10 +149,17 @@ footer {
     text-decoration: inherit;
     color: inherit;
 	background: none;
+	padding: inherit;
 }
 
 a.nostyle:visited {
     text-decoration: inherit;
     color: inherit;
 	background: none;
+	padding: inherit;
+}
+
+.projli {
+	list-style-type: none; 
+	padding-top: 5px;
 }
