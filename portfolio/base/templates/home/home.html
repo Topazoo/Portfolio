@@ -1,10 +1,54 @@
 {% extends 'home/home_wrapper.html' %} 
 {% block data %}
-
-		<div class="row">
-			<div class="col-md-12">
-				<h1>Home Placeholder</h1>
+<div class="col-md-12 nopadding">
+	<div class="col-md-6 nopadding">
+		<div class="col-md-12">
+			<div class="pagehd">
+				<h2>Overview</h2>
+				<hr>
+			</div>
+			<div class="ct">
+				<div class="container-fluid nopadding">
+					<li>This web application was built to showcase a number of the projects I am currently working on. Select a project to see an overview of the project, the code behind it and a demo when applicable.</li>
+					<br><br>
+					<li>I hope that other developers find this code useful. If you have any questions or comments, feel free to email me at <a class="nostyle" style="display: inline;" href="mailto:pswanson@ucdavis.edu">pswanson@ucdavis.edu</a>.</li>		
+					<br><br>
+				</div>
 			</div>
 		</div>
+	</div>
+	<div class="col-md-6 nopadding">
+		<div class="col-md-12">
+			<div class="pagehd">
+				<h2>Projects</h2>
+				<hr>
+			</div>
+			<div class="ct">
+				<div class="container-fluid nopadding projli">
+					<li><i>Smartwatch Messenger</i></li>
+					<ul class="projli">
+					  <li>Client and server for messaging from the Gear S3.</li>
+					</ul>
+					<li><i>Issue Salience Analysis Bot</i></li>
+					<ul class="projli">
+					  <li>Measures political opinions on Reddit with machine learning.</li>
+					</ul>
+					<li><i>VR Game Scripts</i></li>
+					<ul class="projli">
+					  <li>Scripts to interact with objects in VR using the Unity game engine and the HTC Vive.</li>
+					</ul>
+					<li><i>VR Motion Tracking</i></li>
+					<ul class="projli">
+					  <li>Virtualizes real footsteps.</li>
+					</ul>
+					<li><i>Django Filesystem Map</i></li>
+					<ul class="projli">
+					  <li>Displays the contents of directories on a client or server.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
