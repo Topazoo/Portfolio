@@ -34,7 +34,8 @@ $(document).ready(function() {
 		token = String(getCookie('csrftoken'));
 		message = String($('#message').val());
 		number = String($('#phone').val());
-		carrier = String($('#carrier').val());
+        carrier = String($('#carrier').val());
+        auth_key = String($('#auth_key').val());
 		from_number = "4152094084";
         
         /* Send AJAX POST request */
@@ -42,15 +43,18 @@ $(document).ready(function() {
 				"type": "POST",
 				"dataType": "json",
 				"url": '/send_message',
-				"data": {'message': message, 'to_number': number, 'from_number': from_number, 'carrier': carrier, 'csrfmiddlewaretoken': token},
+				"data": {'message': message, 'to_number': number, 'from_number': from_number, 'carrier': carrier, 'auth_key': auth_key, 'csrfmiddlewaretoken': token},
                 /* Message on success */
                 "success": function(response) {
-					alert('Your message has been sent'); 
+                    if(response['code'] == "auth_key_invalid")
+                        alert('Bad authentication code. Contact pswanson@ucdavis.edu.');
+                    else
+					    alert('Your message has been sent'); 
                 },
                 /* Message on failure */
 				"error": function(response) {
 					alert('Failed to send message'); 
-				},
+                },
 		});
     });
 });

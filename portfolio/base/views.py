@@ -4,9 +4,41 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 import json
+import os
 
 # ------------------- Helper Functions ----------------------
-def send_message(request):
+def read_ini():
+    ''' Reads the configuration file '''
+
+    ini_dict = {}
+
+    # Parse config.ini and record values
+    if os.path.isfile('auth.ini'):
+        with open('auth.ini') as config:
+            for line in config:
+                index = line.find("=")
+
+                if index == -1:
+                    print "auth.ini error - Invalid Syntax"
+                    sys.exit(1)
+
+                ini_dict[line[:index]] = line[index+1:].strip()
+
+            config.close()
+
+        # Check errors
+        if "auth_key" not in ini_dict.keys():
+            print "auth.ini error - No key Specified"
+            sys.exit(1)
+
+    else:
+        print "auth.ini error - File Not Found"
+        sys.exit(1)
+
+    return ini_dict
+
+
+def send_message(request, needs_auth_code=False):
     ''' Send a message request to the smartwatch messaging server '''
 
     # If form submitted, parse the submitted data
@@ -15,6 +47,12 @@ def send_message(request):
         to_number = request.POST['to_number']
         from_number = request.POST['from_number']
         carrier = request.POST['carrier']
+   
+        if needs_auth_code == True:
+            ini = read_ini()
+            auth_code = request.POST['auth_key']
+            if ini['auth_key'] != auth_code:
+                return HttpResponse(json.dumps({'code': 'auth_key_invalid'}), content_type="application/json")
 
         client = requests.session()
         # Set the URL to the messaging server
