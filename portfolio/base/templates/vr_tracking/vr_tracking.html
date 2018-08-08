@@ -1,7 +1,7 @@
 {% extends 'vr_tracking/vr_tracking_wrapper.html' %} 
 {% block data %} 
 {% load static %}
-
+		<script src="{% static 'js/tracking.js' %}"></script> 
         <div class="row">
             <div class="pagehd">
                 <h2>The Concept</h2>
@@ -10,14 +10,17 @@
             <div class="ct">
                 <div class="col-md-12 nopadding">
                   <div class="col-md-6">
+				    <br>
                     <li>Movement is one of the least realistic parts of the current VR experience. It substitutes a button push for the physical act of walking. A device that translates physical movement to movement in virtual reality would fundamentally change the experience.</li>
                     <br>
-                    <br>
+                    <br><br><br>
                     <li>I set about tracking footfalls with optical mice in an ongoing attempt to map them in virtual reality.</li>
                     <br>
-                    <br>
+                    <br><br><br>
                     <li><b>This code reads the speed and direction of multiple optical mice concurrently.</b></li>
                     <br>
+					<br>
+					<br>
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive slides" src="{% static "img/gui.png" %}" alt="My image"/>
@@ -26,8 +29,9 @@
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     <br>
-
                 </div>
+				
+				<!-- Thanks to https://www.w3schools.com/howto/howto_js_slideshow.asp for slideshow CSS and JS code -->
 
               </div>
             </div>
