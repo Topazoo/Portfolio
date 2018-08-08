@@ -113,6 +113,12 @@ def issue_bot(request):
 def vr_game_code(request):
     ''' VR Game Code Page '''
     return render(request, 'vr_game/vr_game_code.html', {})
+def vr_game_code_holding(request):
+    ''' VR Game Code Page '''
+    return render(request, 'vr_game/vr_game_code_holding.html', {})
+def vr_game_code_shooting(request):
+    ''' VR Game Code Page '''
+    return render(request, 'vr_game/vr_game_code_shooting.html', {})
 def vr_game_scripts(request):
     ''' VR Game Scripts Page '''
     return render(request, 'vr_game/vr_game_scripts.html', {})

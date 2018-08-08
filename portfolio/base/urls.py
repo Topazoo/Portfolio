@@ -21,6 +21,8 @@ urlpatterns = [
    
     url(r'^vr_game/$', views.vr_game),
     url(r'^vr_game/code/$', views.vr_game_code),
+    url(r'^vr_game/code/holding/$', views.vr_game_code_holding),
+    url(r'^vr_game/code/shooting/$', views.vr_game_code_shooting),
     url(r'^vr_game/scripts/$', views.vr_game_scripts),
     
     url(r'^vr_tracking/$', views.vr_tracking),
