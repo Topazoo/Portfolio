@@ -8,10 +8,10 @@
             </div>
             <div class="ct">
                 <div class="container-fluid">
-                    <li>The code for mapping directory hierarchies is written in Python and can be found below.</li>
-                    <br>
-                    <li>It uses a <i>Root</i> class to map the files and directories in any chosen directory, and then creates <i>Directory</i> classes for each directory found. The <i>Directory</i> classes then do the same for the directory they were created for. The resulting data structure preserves the hierarchy of the real directory.</li>
-                    <br><br>
+                    <li>The code below allows for multiple optical mice to be read concurrently. It uses the <i>pyusb</i> Python library to interface with the mice. Devices can be connected and read using the <i>USB_Mouse</i> class.</li>
+					<br>
+					<li>The data is analyzed to provide the direction of the mouse and its relative speed instead of just the raw data array.</li>
+					<br><br>
                     <h4><i>USB_Device.py</i></h4>
                     <script src="http://gist-it.appspot.com/http://github.com/Topazoo/VR_Motion_Tracking/blob/master/USB_Device.py?footer=0"></script>
                 </div>
