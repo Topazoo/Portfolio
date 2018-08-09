@@ -8,10 +8,17 @@
             </div>
             <div class="ct">
                 <div class="container-fluid nopadding">
-                    <li>The code for mapping directory hierarchies is written in Python and can be found below.</li>
+                    <li>The code below collects basic information from Reddit.com subreddits as well as top users, their posts and their comments. The subreddits the bot collects information about can be customized via the <i>input/subreddits.xlsx</i> file.</li>
                     <br>
-                    <li>It uses a <i>Root</i> class to map the files and directories in any chosen directory, and then creates <i>Directory</i> classes for each directory found. The <i>Directory</i> classes then do the same for the directory they were created for. The resulting data structure preserves the hierarchy of the real directory.</li>
-                    <br><br>
+                    <li>The output is generated is broken into three different spreadsheets:</li>
+					<br>
+					<div class="col-md-12" style="padding-left: 30px;">
+					  <p><i>output/subreddit_results.xlsx</i>   -   Breakdown of information collected from each subreddit.</p>
+					  <p><i>output/user_results.xlsx</i>   -   Top posters per subreddit and most-used nouns per poster.</p>
+					  <p><i>output/comment_results.xlsx</i>   -   Most-used nouns per subreddit.</p>
+					  <br>
+					</div>
+                    <br>
                     <h4><i>Bot.py</i></h4>
                     <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Issue_Saliency_Analysis_Bot/blob/master/POL193_RedditBot/Bot.py?footer=0"></script>
                 </div>
