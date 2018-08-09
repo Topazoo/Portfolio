@@ -223,4 +223,8 @@ a.nostyle:visited {
 	from {opacity: .4} 
 	to {opacity: 1}
   }
-  
+	
+	.gitlink{
+    table-layout: fixed;
+    word-wrap: break-word;
+}
