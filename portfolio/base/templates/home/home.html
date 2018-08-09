@@ -1,5 +1,7 @@
 {% extends 'home/home_wrapper.html' %} 
 {% block data %}
+{% load static %}
+
 <div class="col-md-12 nopadding">
 	<div class="col-md-6 nopadding">
 		<div class="col-md-12">
@@ -9,16 +11,22 @@
 			</div>
 			<div class="ct">
 				<div class="container-fluid nopadding">
+				  <div class="col-md-12 nopadding">
+				    <div class="col-md-6 nopadding">
+					  <img class="img-responsive" style="height: 40%; width: auto; padding: 10px;" src="{% static "img/placeholder.jpg" %}" />
+					</div>
+					<div class="col-md-6">
+					  <p>Hi! I'm Peter. I'm a software engineer and recent graduate of UC Davis.</p>
+					  <br>
+					  <p>I built this web application was built to showcase a number of the projects I am currently working on. Select a project to see an overview of the project, the code behind it and a demo when applicable.</p>
+					</div>
+				  </div>
+				  <div class="col-md-12 nopadding">
 					<br>
-					<li>Hi! I'm Peter. I'm a software engineer and recent graduate of UC Davis.</li>
-					<br><br>
-					<br><br>
-					<li>I built this web application was built to showcase a number of the projects I am currently working on. Select a project to see an overview of the project, the code behind it and a demo when applicable.</li>
-					<br><br>
-					<br><br>
-					<li>I hope that other developers find this code useful. If you have any questions or comments, feel free to email me at <a class="nostyle" style="display: inline;" href="mailto:pswanson@ucdavis.edu">pswanson@ucdavis.edu</a>.</li>		
-					<br><br><br>
-				</div>
+				    <p>I hope that other developers find this code useful. If you have any questions or comments, feel free to email me at <a class="nostyle" style="display: inline;" href="mailto:pswanson@ucdavis.edu">pswanson@ucdavis.edu</a>.</p>	
+				    <br><br><br>
+				  </div>
+			    </div>
 			</div>
 		</div>
 	</div>
