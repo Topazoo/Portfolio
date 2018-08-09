@@ -5,6 +5,7 @@ from django.http import HttpResponse
 import requests
 import json
 import os
+import sys
 
 # ------------------- Helper Functions ----------------------
 def read_ini():
@@ -103,9 +104,9 @@ def prefix_subreddit(subreddit):
 def home_site(request):     
     ''' Home Code Page '''
     return render(request, 'home/home_site.html', {})
-def home_about(request):     
-    ''' Home About Page '''
-    return render(request, 'home/home_about.html', {})
+def home_resume(request):     
+    ''' Home Resume Page '''
+    return render(request, 'home/home_resume.html', {})
 def home(request):     
     ''' Home Page '''
     return render(request, 'home/home.html', {})

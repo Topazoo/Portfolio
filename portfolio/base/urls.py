@@ -7,7 +7,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', views.home),
     url(r'^site/$', views.home_site),
-    url(r'^about/$', views.home_about),
+    url(r'^resume/$', views.home_resume),
 
     url(r'^messenger/$', views.messenger),
     url(r'^send_message/*', views.send_message),
