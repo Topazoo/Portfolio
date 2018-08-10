@@ -59,7 +59,9 @@ $(document).ready(function() {
 				"error": function(response) {
 					alert('Failed to send message'); 
                 },
-		});
+        });
+        
+        return false;
     });
 });
 
