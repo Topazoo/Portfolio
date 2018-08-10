@@ -65,11 +65,13 @@ $(document).ready(function() {
     });
 
     $("#icon-btn").click(function() {
+        /* Activate dropdown menu when icon clicked on mobile devices */
+        
         var x = document.getElementById("nav-resp");
-        if (x.className === "topnav") {
+        if (x.className === "navbk topnav") {
             x.className += " responsive";
         } else {
-            x.className = "topnav";
+            x.className = "navbk topnav";
         }
     });
 
