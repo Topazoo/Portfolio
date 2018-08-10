@@ -53,7 +53,7 @@ def read_ini():
             print "server_config.ini error - No hosts specified"
             sys.exit(1)
         else:
-            ini_dict['hosts'] = list(ini_dict['hosts'].encode('utf8'))
+            ini_dict['hosts'] = [unicode(ini_dict['hosts'])]
 
     else:
         print "server_config.ini error - File Not Found"
