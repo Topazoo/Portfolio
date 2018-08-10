@@ -10,13 +10,13 @@
                 </div>
                 <div class="ct">
                     <div class="container-fluid nopadding">
-                        <li>Every subreddit on Reddit has its own rules, moderators and regular posters. As a result, each represents its own community in which certain political issues are more salient.</li>
+                        <p>Every subreddit on Reddit has its own rules, moderators and regular posters. As a result, each represents its own community in which certain political issues are more salient.</p>
                         <br>
                         <br>
-                        <li>Understanding which issues are politically salient to individual communities is a powerful tool. It can be used to gain political knowledge or target messages.</li>
+                        <p>Understanding which issues are politically salient to individual communities is a powerful tool. It can be used to target and prime messages.</p>
                         <br>
                         <br>
-                        <li><b>This code analyzes subreddit comments to determine the issues most salient to that community.</b></li>
+                        <p><b>This code analyzes subreddit comments to determine the issues most salient to that community.</b></p>
                         <br><br><br>
                     </div>
                 </div>
@@ -47,13 +47,14 @@
                             <br>
                             <div class="col-md-12 nopadding">
                               <br>
-                              <p>Note - It may take a minute or so to calculate the top users</p>
+                              <p>Note - It may take a minute or so to calculate the top users.</p>
                             </div>
                             {% endif %}
                         </form>
                         <div class="col-md-12" align="center">
                             {% if users != None %}
                               <br>
+							  <br>
                               <h4>Top users in r/{{subreddit}}</h4>
                               <br>
                               {% for user in users %}
