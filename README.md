@@ -25,7 +25,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
  ```
 
-### Create the configuration files:
+### Creating the configuration files:
 These files should be placed in the <b>portfolio/</b> directory (the directory that contains 
 <i>manage.py</i>).
 
