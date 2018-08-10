@@ -26,7 +26,7 @@ Quit the server with CONTROL-C.
  ```
 
 ### Create the configuration files:
-These file should be placed in the <b>portfolio/</b> directory (the directory that contains 
+These files should be placed in the <b>portfolio/</b> directory (the directory that contains 
 <i>manage.py</i>).
 
 <i>praw.ini</i> must adhere to the following format: https://praw.readthedocs.io/en/latest/getting_started/configuration/prawini.html
@@ -37,19 +37,19 @@ secret_key=KEY
 debug=TRUE/FALSE
 hosts=HOSTS
 ```
-Where the right-hand value is your Django secret key, debug setting, and comma seperated host urls (e.g. 127.0.0.1,127.0.0.2) respectively. 
+Where the right-hand value is your Django secret key, debug setting, and comma separated host URLs (e.g. 127.0.0.1,127.0.0.2) respectively. 
 
 ## Files
 - portfolio/base/urls.py - URLs that can be visited on the site
 - portfolio/base/views.py - Python functions that run when URLs are visited
 - portfolio/base/templates/ - HTML templates loaded when URLs are visited
 - portfolio/base/static/css/base.css - Style sheet for HTML templates
-- portfolio/base/static/js/ - Javascript code
+- portfolio/base/static/js/ - jQuery code
 - portfolio/base/Bot.py - Python code for the issue saliency bot demo
 - portfolio/base/directory_tree.py - Python code for the Django virtual file hierarchy demo
 
 ## Requirements:
-Requirements can be fond in <i>requirements.txt</i>. They can be installed via pip.
+Requirements can be found in <i>requirements.txt</i>. They can be installed via pip.
 ```
 $ pip install -r requirements.txt
 ```
