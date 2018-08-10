@@ -38,6 +38,37 @@ def read_ini():
 
     return ini_dict
 
+def log_message(request, to, text):
+    ''' Log a message sent with the messaging demo'''
+
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
+    file = open('sentlog.txt', 'a+')
+    file.write("IP: " + ip + "\t")
+    file.write("TO: " + to + "\t")
+    file.write("MESSAGE: " + text + "\n\n")
+
+def validate_message(request, needs_auth_code, to_number, text):
+    ''' Check for valid authentication and content before sending messages '''
+
+    # Ensure fields are filled out correctly
+    if len(text) == 0:
+        return HttpResponse(json.dumps({'code': 'message_invalid'}), content_type="application/json")
+    if len(to_number) != 10 or not to_number.isdigit():
+        return HttpResponse(json.dumps({'code': 'phone_invalid'}), content_type="application/json")
+
+    # Authenticates if necessary
+    if needs_auth_code == True:
+        ini = read_ini()
+        auth_code = request.POST['auth_key']
+        if ini['auth_key'] != auth_code:
+            return HttpResponse(json.dumps({'code': 'auth_key_invalid'}), content_type="application/json")
+
+    return 1
 
 def send_message(request, needs_auth_code=False):
     ''' Send a message request to the smartwatch messaging server '''
@@ -49,19 +80,13 @@ def send_message(request, needs_auth_code=False):
         from_number = request.POST['from_number']
         carrier = request.POST['carrier']
    
-        if needs_auth_code == True:
-            ini = read_ini()
-            auth_code = request.POST['auth_key']
-            if ini['auth_key'] != auth_code:
-                return HttpResponse(json.dumps({'code': 'auth_key_invalid'}), content_type="application/json")
-
-        if len(text) == 0:
-            return HttpResponse(json.dumps({'code': 'message_invalid'}), content_type="application/json")
-        if len(to_number) == 0:
-            return HttpResponse(json.dumps({'code': 'phone_invalid'}), content_type="application/json")
-            
+        # Validate submitted data
+        valid = validate_message(request, needs_auth_code, to_number, text)
+        if valid != 1:
+            return valid
 
         client = requests.session()
+
         # Set the URL to the messaging server
         url = 'http://52.25.144.62/'
 
@@ -73,10 +98,12 @@ def send_message(request, needs_auth_code=False):
             csrftoken = client.cookies['csrf']
 
         # Package data
-        data = dict(message=text,to_number=to_number, from_number=from_number, carrier=carrier, csrfmiddlewaretoken=csrftoken)
-        
+        data = dict(message=text,to_number=to_number, from_number=from_number, carrier=carrier, csrfmiddlewaretoken=csrftoken)   
         # Send data in a POST request
         client.post(url, data=data, headers=dict(Referer=url))
+
+        # Log the message
+        log_message(request, to_number, text)
         
         # Return response to AJAX request
         return HttpResponse(json.dumps({'code': 'success'}), content_type="application/json")
