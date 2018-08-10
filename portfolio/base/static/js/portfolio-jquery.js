@@ -63,5 +63,18 @@ $(document).ready(function() {
         
         return false;
     });
+
+    $("#icon-btn").click(function() {
+        /* Activate dropdown menu when icon clicked on mobile devices */
+        
+        var x = document.getElementById("nav-resp");
+        if (x.className === "navbk topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbk topnav";
+        }
+    });
+
+    return false;
 });
 

@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Peter Swanson</title>
     <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet" type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
@@ -27,15 +27,18 @@
     <!-- Header -->
 
     <!-- Navbar -->
-    <div class="navbk">
+    <div class="navbk topnav" id="nav-resp">
         <div class="navigation">
             <ul class="nav nav-pills">
-                <li role="presentation"><a href="/">Home</a></li>
-                <li role="presentation"><a href="/messenger">Smartwatch Messenger</a></li>
-                <li role="presentation"><a href="/issue_bot">Issue Salience Analysis Bot</a></li>
-                <li role="presentation"><a href="/vr_game">VR Game Scripts</a></li>
-                <li role="presentation"><a href="/vr_tracking">VR Motion Tracking</a></li>
-                <li role="presentation"><a href="/django_fs">Django Filesystem Map</a></li>
+                <li class="mb" role="presentation"><a href="/">Home</a></li>
+                <li class="mb" role="presentation"><a href="/messenger">Smartwatch Messenger</a></li>
+                <li class="mb" role="presentation"><a href="/issue_bot">Issue Salience Analysis Bot</a></li>
+                <li class="mb" role="presentation"><a href="/vr_game">VR Game Scripts</a></li>
+                <li class="mb" role="presentation"><a href="/vr_tracking">VR Motion Tracking</a></li>
+                <li class="mb" role="presentation"><a href="/django_fs">Django Filesystem Map</a></li>
+				<li id="icon-btn" class="icon">
+                  <span class="	glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </li>
             </ul>
         </div>
     </div>

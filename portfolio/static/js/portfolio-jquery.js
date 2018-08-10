@@ -51,17 +51,28 @@ $(document).ready(function() {
                     else if(response['code'] == "message_invalid")
                         alert('Please enter a message.');
                     else if(response['code'] == "phone_invalid")
-                        alert('Please enter a phone number');
+                        alert('Please enter a valid 10-digit phone number (without hyphens).');
                     else
-					    alert('Your message has been sent'); 
+					    alert('Your message has been sent!'); 
                 },
                 /* Message on failure */
 				"error": function(response) {
-					alert('Failed to send message'); 
+					alert('Failed to send message.'); 
                 },
         });
         
         return false;
     });
+
+    $("#icon-btn").click(function() {
+        var x = document.getElementById("nav-resp");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    });
+
+    return false;
 });
 
