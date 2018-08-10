@@ -55,6 +55,12 @@ def send_message(request, needs_auth_code=False):
             if ini['auth_key'] != auth_code:
                 return HttpResponse(json.dumps({'code': 'auth_key_invalid'}), content_type="application/json")
 
+        if len(text) == 0:
+            return HttpResponse(json.dumps({'code': 'message_invalid'}), content_type="application/json")
+        if len(to_number) == 0:
+            return HttpResponse(json.dumps({'code': 'phone_invalid'}), content_type="application/json")
+            
+
         client = requests.session()
         # Set the URL to the messaging server
         url = 'http://52.25.144.62/'
@@ -140,7 +146,7 @@ def issue_bot(request):
     top_users = None
     subreddit = "None"
 
-    if request.method == 'POST':
+    if request.method == 'POST' and request.POST['subreddit']:
         # If form submitted, get top users for submitted subreddit
         subreddit = request.POST['subreddit']
         top_users = get_top_user(subreddit)

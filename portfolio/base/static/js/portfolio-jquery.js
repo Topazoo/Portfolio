@@ -48,6 +48,10 @@ $(document).ready(function() {
                 "success": function(response) {
                     if(response['code'] == "auth_key_invalid")
                         alert('Bad authentication code. Contact pswanson@ucdavis.edu.');
+                    else if(response['code'] == "message_invalid")
+                        alert('Please enter a message.');
+                    else if(response['code'] == "phone_invalid")
+                        alert('Please enter a phone number');
                     else
 					    alert('Your message has been sent'); 
                 },
