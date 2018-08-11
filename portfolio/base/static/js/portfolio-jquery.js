@@ -81,6 +81,6 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#icon-btn').toggleClass("down"); 
+    $('#icon-btn').toggleClass("down");
 });
 

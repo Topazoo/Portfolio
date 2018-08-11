@@ -294,9 +294,9 @@ a.nostyle:visited {
 	-moz-transform: scale(.1);
 	-webkit-transform: scale(.1);
 	transform: scale(.1);
-	-moz-transition: all .4s ease-in-out;
-	-webkit-transition: all .4s ease-in-out;
-	transition: all .4s linear;
+	-moz-transition: all .7s ease-in-out;
+	-webkit-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
 }
 
 .rotate.down{
