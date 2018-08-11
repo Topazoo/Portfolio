@@ -78,8 +78,9 @@ $(document).ready(function() {
         /* Animate icon */
         var y = document.getElementById("icon-btn");
         y.classList.toggle("change");
+        return false;
     });
 
-    return false;
+    $('#icon-btn').toggleClass("down"); 
 });
 

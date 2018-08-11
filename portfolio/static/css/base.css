@@ -288,3 +288,20 @@ a.nostyle:visited {
 	-webkit-transform: rotate(45deg) translate(0px, -20px);
 	transform: rotate(45deg) translate(0px, -20px);
 }
+
+.rotate{
+	-ms-transform: scale(.1);
+	-moz-transform: scale(.1);
+	-webkit-transform: scale(.1);
+	transform: scale(.1);
+	-moz-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s linear;
+}
+
+.rotate.down{
+	-ms-transform: rotate(360deg) scale(1);
+	-moz-transform: rotate(360deg) scale(1);
+	-webkit-transform: rotate(360deg) scale(1);
+	transform: rotate(360deg) scale(1);
+}
