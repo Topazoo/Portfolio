@@ -270,8 +270,8 @@ a.nostyle:visited {
 
 /* Rotate first bar */
 .change .bar1 {
-	-webkit-transform: rotate(-45deg) translate(136.5px, 139px) ;
-	transform: rotate(-45deg) translate(136.5px, 139px) ;
+	-webkit-transform: rotate(-45deg) translate(-8px, -6px) ;
+	transform: rotate(-45deg) translate(-8px, -6px) ;
 }
 
 /* Fade out the second bar */
@@ -281,6 +281,6 @@ a.nostyle:visited {
 
 /* Rotate last bar */
 .change .bar3 {
-	-webkit-transform: rotate(45deg) translate(149.5px, -169.5px);
-	transform: rotate(45deg) translate(149.5px, -169.5px);
+	-webkit-transform: rotate(45deg) translate(4px, -25px);
+	transform: rotate(45deg) translate(4px, -25px);
 }
