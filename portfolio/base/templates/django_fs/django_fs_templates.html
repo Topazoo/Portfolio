@@ -3,16 +3,16 @@
 
         <div class="row">
             <div class="pagehd">
-                <h2 class="text-sm-center text-md-left">Representing Recursive Data on a Webserver</h2>
+                <h2 class="text-xs-center text-md-left">Representing Recursive Data on a Webserver</h2>
                 <hr>
             </div>
             <div class="ct">
                 <div class="col-md-12 nopadding">
                     <div class="col-md-4 nopadding">
                         <br>
-                        <p class="text-sm-center text-md-left">I run my webservers using the Django Python Web Framework.</p>
+                        <p class="text-xs-center text-md-left">I run my webservers using the Django Python Web Framework.</p>
                         <br>
-                        <p class="text-sm-center text-md-left">Django is great because it allows you to easily display variables from a Python backend in the frontend HTML templates.</p>
+                        <p class="text-xs-center text-md-left">Django is great because it allows you to easily display variables from a Python backend in the frontend HTML templates.</p>
                         <br>
                     </div>
                     <div class="col-md-8" style="padding-top: 18px;">
@@ -28,21 +28,21 @@ def view_hierarchy(request):
                         <br>
                     </div>
                 </div>
-                <p class="text-sm-center text-md-left">The real challenge here is displaying the Root data structure (containing the recursively mapped directory information) with a template.</p>
+                <p class="text-xs-center text-md-left">The real challenge here is displaying the Root data structure (containing the recursively mapped directory information) with a template.</p>
                 <br>
                 <br>
-                <p class="text-sm-center text-md-left">A great solution is to make your Django HTML templates similarly recursive. This solution mirrors our initial mapping exactly by using one root template to display a list of the top level files and directories.</p>
+                <p class="text-xs-center text-md-left">A great solution is to make your Django HTML templates similarly recursive. This solution mirrors our initial mapping exactly by using one root template to display a list of the top level files and directories.</p>
                 <br>
                 <br>
                 <h4><i>view_hierarchy.html</i></h4>
                 <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/templates/view_hierarchy.html?footer=0"></script>
                 <br>
-                <p class="text-sm-center text-md-left">The top level template inserts the recursive template for each directory. The same replacement happens in the recursive template for every lower level directory.</p>
+                <p class="text-xs-center text-md-left">The top level template inserts the recursive template for each directory. The same replacement happens in the recursive template for every lower level directory.</p>
                 <br>
                 <h4><i>direc_contents.html</i></h4>
                 <script src="http://gist-it.appspot.com/http://github.com/Topazoo/Django_Virtual_File_Hierarchy/blob/master/templates/direc_contents.html?footer=0"></script>
                 <br>
-                <p class="text-sm-center text-md-left">The result is a quick way to generate a perfectly preserved representation of any directory hierarchy on your server. See the demo!</p>
+                <p class="text-xs-center text-md-left">The result is a quick way to generate a perfectly preserved representation of any directory hierarchy on your server. See the demo!</p>
             </div>
         </div>
 
