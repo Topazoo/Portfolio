@@ -5,18 +5,18 @@
         <div class="col-md-6 nopadding">
             <div class="col-md-12">
                 <div class="pagehd">
-                    <h2>The Concept</h2>
+                    <h2 class="text-sm-center text-md-left">The Concept</h2>
                     <hr>
                 </div>
                 <div class="ct">
                     <div class="container-fluid nopadding">
-                        <p>Every subreddit on Reddit has its own rules, moderators and regular posters. As a result, each represents its own community in which certain political issues are more salient.</p>
+                        <p class="text-sm-center text-md-left">Every subreddit on Reddit has its own rules, moderators and regular posters. As a result, each represents its own community in which certain political issues are more salient.</p>
                         <br>
                         <br>
-                        <p>Understanding which issues are politically salient to individual communities is a powerful tool. It can be used to target and prime messages.</p>
+                        <p class="text-sm-center text-md-left">Understanding which issues are politically salient to individual communities is a powerful tool. It can be used to target and prime messages.</p>
                         <br>
                         <br>
-                        <p><b>This code analyzes subreddit comments to determine the issues most salient to that community.</b></p>
+                        <p class="text-sm-center text-md-left"><b>This code analyzes subreddit comments to determine the issues most salient to that community.</b></p>
                         <br><br><br>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
         <div class="col-md-6 nopadding">
             <div class="col-md-12" style="padding-left: 30px">
                 <div class="pagehd">
-                    <h2>Get Top Subreddit Users Demo</h2>
+                    <h2 class="text-sm-center text-md-left">Get Top Subreddit Users Demo</h2>
                     <hr>
                 </div>
                 <div class="ct">
@@ -47,7 +47,7 @@
                             <br>
                             <div class="col-md-12 nopadding">
                               <br>
-                              <p>Note - It may take a minute or so to calculate the top users.</p>
+                              <p class="text-sm-center text-md-left" >Note - It may take a minute or so to calculate the top users.</p>
                             </div>
                             {% endif %}
                         </form>
@@ -55,11 +55,11 @@
                             {% if users != None %}
                               <br>
 							  <br>
-                              <h4>Top users in r/{{subreddit}}</h4>
+                              <h4 class="text-sm-center text-md-left">Top users in r/{{subreddit}}</h4>
                               <br>
                               {% for user in users %}
                                 <div class="col-md-4">
-                                  <p>{{user.name}}</p>
+                                  <p class="text-sm-center text-md-left">{{user.name}}</p>
                                   <br>
                                 </div>
                               {% endfor %}
