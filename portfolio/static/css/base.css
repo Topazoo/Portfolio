@@ -260,3 +260,27 @@ a.nostyle:visited {
   } 
 }
 
+.bar1, .bar2, .bar3 {
+	width: 45px;
+	height: 4px;
+	background-color:	#91C7B1;
+	margin: 4px 0;
+	transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(136.5px, 139px) ;
+	transform: rotate(-45deg) translate(136.5px, 139px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+	opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(149.5px, -169.5px);
+	transform: rotate(45deg) translate(149.5px, -169.5px);
+}
