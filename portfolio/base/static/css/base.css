@@ -257,6 +257,10 @@ a.nostyle:visited {
     float: none;
     display: block;
     text-align: center;
+	} 
+	
+	.topnav.responsive li.mb2 {
+    padding-bottom: 15px;
   } 
 }
 
