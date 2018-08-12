@@ -80,7 +80,5 @@ $(document).ready(function() {
         y.classList.toggle("change");
         return false;
     });
-
-    $('#icon-btn').toggleClass("down");
 });
 
