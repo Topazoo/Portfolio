@@ -190,12 +190,12 @@ a.nostyle:visited {
 	background-color: rgba(0,0,0,0.8);
   }
   
- .profile {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	height: 40%; 
-	width: auto; 
-	padding-left: 0px;
- }
+  .profile {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		max-width: 60%;
+		width: auto; 
+		padding-left: 0px;
+  }
   
   .active, .dot:hover {
 	background-color: #717171;
