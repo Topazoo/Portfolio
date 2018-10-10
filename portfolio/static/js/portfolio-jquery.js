@@ -80,5 +80,19 @@ $(document).ready(function() {
         y.classList.toggle("change");
         return false;
     });
+
+    $("#projdrop").click(function() {
+        /* Activate project dropdown menu when clicked on mobile devices */
+
+         if ($(".projdrop-content").is(":hidden")) {
+            $(".projdrop-content").css("display", "block");
+         }
+         else {
+            $(".projdrop-content").hide();
+         }
+         return false;
+
+
+    });
 });
 
