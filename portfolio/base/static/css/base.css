@@ -21,21 +21,33 @@ body {
 	font-size: 20px;
 }
 
-.nav-pills > li {
-	float:none;
-    display:inline-block;
-    font-size: 20px;
+.nav-pills li {
+	float: none;
+  display: inline-block;
+  font-size: 20px;
 	font-family: 'Noto Serif', serif;
 }
 
-.nav-pills > li a {
+.nav-pills li a {
 	background-color: #FFFFFF;
 	color: #91C7B1;
+} 
+
+.nav-pills #projdrop  {
+	background-color: #FFFFFF;
+	color: #91C7B1;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 10px 15px;
+}
+
+#projdrop:hover  {
+	background-color: #eee;
 }
 
 .navbk {
 	background-color: #FFFFFF;
-    padding: 10px 10px 10px 20px;
+  padding: 10px 10px 10px 20px;
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-color: #AEE5D8;
@@ -227,6 +239,10 @@ a.nostyle:visited {
 		display: none;
 	}
 
+	.topnav #projdrop { 
+		display: none;
+	}
+
   .topnav li.icon {
     float: center;
     display: block;
@@ -246,10 +262,32 @@ a.nostyle:visited {
     display: block;
     text-align: center;
 	} 
+
+	.topnav.responsive #projdrop { 
+		float: none;
+    display: block;
+		text-align: center;
+		position: relative;
+	}
+
+	.topnav.responsive .proj-cont { 
+		float: none;
+    display: block;
+		text-align: center;
+		position: relative;
+	}
+
+	.topnav.responsive .projdrop-content { 
+		float: none;
+    display: none;
+		text-align: center;
+		position: relative;
+	}
 	
 	.topnav.responsive li.mb2 {
-    padding-bottom: 15px;
-  } 
+    padding-bottom: 10px;
+	} 
+	
 }
 
 .bar1, .bar2, .bar3 {
@@ -324,4 +362,21 @@ a.nostyle:visited {
 		padding-left: 0px;
 		margin-top: 5px; 
   }
+}
+
+.projdrop-content li {
+	display: block;
+	float: none;
+}
+
+.projdrop-content {
+	display: none;
+	position: absolute;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.proj-cont {
+	display: inline-block;
 }
