@@ -387,6 +387,7 @@ a.nostyle:visited{
 	border-top-color: #FFFFFF;
 	margin-top: 5px;
 	border-width: 1.5px;
+	border-bottom-style: none;
 }
 
 .proj-cont{
