@@ -90,6 +90,8 @@ $(document).ready(function() {
          else {
             $(".projdrop-content").hide();
          }
+
+         document.getElementById("rot-caret").classList.toggle("change");
          return false;
 
 

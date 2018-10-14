@@ -31,6 +31,8 @@ body {
 .nav-pills li a {
 	background-color: #FFFFFF;
 	color: #91C7B1;
+	padding-left: 27px;
+	padding-right: 27px;
 } 
 
 .nav-pills #projdrop  {
@@ -313,6 +315,15 @@ a.nostyle:visited {
 .change .bar3 {
 	-webkit-transform: rotate(45deg) translate(0px, -20px);
 	transform: rotate(45deg) translate(0px, -20px);
+}
+
+.caret.change {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.caret {
+	transition: 0.3s;
 }
 
 @media (max-width: 600px) {
