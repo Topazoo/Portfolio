@@ -1,24 +1,7 @@
 {% extends 'base/base.html' %} 
 {% block content %}
 <div class="pagect">
-        <div class="row">
-            <div class="pagetitle">
-				<h1 align="center">Welcome!</h1>
-			</div>
-		</div>
-
-		<br>
-				
-		<div class="navigation">
-			<ul class="nav nav-pills">
-                <li role="presentation"><a href="/">Home</a></li>
-				<li role="presentation"><a href="/resume">Resume</a></li>
-				<li role="presentation"><a href="/site">This Site's Code</a></li>
-			</ul>
-		</div>
-
-		<br><br>
-
+	<br>
 		{% block data %}
 		  {% include "home.html" %}
 		  {% include "home_site.html" %}
@@ -28,8 +11,7 @@
 		<div class="pagehd">
 			<div class="col-md-12">
 				<hr>
-				<br>
-				<h6 align="center"><a class="nostyle gitlink" href="https://github.com/Topazoo/Portfolio">(https://github.com/Topazoo/Portfolio)</a></h6>
+				<h6 align="center"><a class="nostyle gitlink" href="https://github.com/Topazoo/">View all projects on GitHub</a></h6>
 			</div>
 		</div>
 </div>

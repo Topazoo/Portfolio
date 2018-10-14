@@ -1,15 +1,14 @@
 body{
-	background-color:#F1F7ED;
-	padding-bottom:2%
+	padding-bottom:2%;
 }
 
 .header{
 	font-family:'Noto Serif',serif;
 	font-size:200px;
 	text-align:center;
-	background-color:#91C7B1;
-	color:#F1F7ED;
-	padding:40px 20px 20px 40px
+	background-color:#0275d8d4;
+	color:#FFF;
+	padding:20px 20px 20px 40px
 }
 
 .header>h1{
@@ -30,14 +29,14 @@ body{
 
 .nav-pills li a{
 	background-color:#FFF;
-	color:#91C7B1;
+	color:#0275d8d4;
 	padding-left:27px;
 	padding-right:27px
 }
 
 .nav-pills #projdrop{
 	background-color:#FFF;
-	color:#91C7B1;
+	color:#0275d8d4;
 	border-radius:4px;
 	display:inline-block;
 	padding:10px 15px
@@ -49,10 +48,10 @@ body{
 
 .navbk{
 	background-color:#FFF;
-	padding:10px 10px 10px 20px;
+	padding:5px 10px 5px 10px;
 	border-top-style:solid;
 	border-bottom-style:solid;
-	border-color:#AEE5D8
+	border-color:#f0ad4e52;
 }
 
 .nav-pills{
@@ -96,14 +95,14 @@ footer{
 .pagehd{
 	font-size:25px;
 	padding-bottom:5px;
-	color:#91C7B1;
+	color:#0275d8d4;
 	font-family:'Noto Serif',serif;
 	letter-spacing:.2px
 }
 
 .pagetitle{
 	font-size:25px;
-	color:#91C7B1;
+	color:#0275d8d4;
 	font-family:'Noto Serif',serif;
 	letter-spacing:.4px
 }
@@ -134,7 +133,7 @@ footer{
 	background-image:none;
 	border:1px solid transparent;
 	border-radius:4px;
-	background-color:#91C7B1;
+	background-color:#0275d8d4;
 	color:white
 }
 
@@ -146,12 +145,10 @@ footer{
 }
 
 .pagebk{
-	background-color:rgba(255,255,255,1);
-	width:97%;
+	background-color:#FFF;
 	margin:auto;
-	border-color:rgba(174,229,216,1);
-	border-style:solid;
-	padding:25px
+	border-color: #f0ad4e52;
+	padding:20px 10px 20px 10px;
 }
 
 .nopadding{
@@ -231,12 +228,11 @@ a.nostyle:visited{
 }
 
 .gitlink{
-	table-layout:fixed;
-	word-wrap:break-word
+	display: inline-block;
 }
 
 .topnav .icon{
-	color:#91C7B1;
+	color:#0275d8d4;
 	display:none
 }
 
@@ -291,7 +287,7 @@ a.nostyle:visited{
 .bar1,.bar2,.bar3{
 	width:45px;
 	height:4px;
-	background-color:#91C7B1;
+	background-color:#0275d8d4;
 	margin:4px 0;
 	transition:0.7s
 }
@@ -378,8 +374,11 @@ a.nostyle:visited{
 	display:none;
 	position:absolute;
 	min-width:160px;
-	box-shadow:0 8px 16px 0 rgba(0,0,0,.2);
-	z-index:1
+	z-index:1;
+	border-style: solid;
+	border-color: #f0ad4e52;
+	border-top-color: #FFFFFF;
+	margin-top: 5px;
 }
 
 .proj-cont{

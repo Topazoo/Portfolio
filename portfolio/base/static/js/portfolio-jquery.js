@@ -73,6 +73,7 @@ $(document).ready(function() {
         } 
         else {
             x.className = "navbk topnav";
+            $(".projdrop-content").hide();
         }
 
         /* Animate icon */
