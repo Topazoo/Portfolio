@@ -112,6 +112,8 @@ footer{
 	color:black !important;
 	display: inline-block !important;
 	font-size: 18px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
 }
 
 .floatnav {
@@ -338,9 +340,6 @@ a.nostyle:visited{
 			width:auto;
 			padding-left:0
 	}
-	.subnav {
-		font-size: 14px !important;
-	}
 }
 
 @media (min-width:600px){
@@ -350,9 +349,6 @@ a.nostyle:visited{
 			height:auto;
 			width:auto;
 			padding-left:0
-	}
-	.subnav {
-		font-size: 16px !important;
 	}
 }
 
