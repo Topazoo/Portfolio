@@ -196,7 +196,7 @@ a.nostyle:visited{
 
 .next{
 	right:0;
-	border-radius:3px 0 0 3px
+	border-radius:3px 0 0 3px;
 }
 
 .prev:hover,.next:hover{
@@ -391,4 +391,10 @@ a.nostyle:visited{
 
 .proj-cont{
 	display:inline-block
+}
+
+.slideshow-cont {
+	max-width: 400px;
+	position: relative;
+	margin: auto;
 }
