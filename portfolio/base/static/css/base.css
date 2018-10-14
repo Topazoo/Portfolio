@@ -228,12 +228,14 @@ a.nostyle:visited{
 }
 
 .gitlink{
-	display: inline-block;
+	display: block;
 }
 
 .topnav .icon{
 	color:#0275d8d4;
-	display:none
+	display:none;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 
 @media screen and (max-width:600px){
@@ -254,7 +256,7 @@ a.nostyle:visited{
 			position:relative
 	}
 	.topnav.responsive li.icon{
-			padding-top:10px
+			padding-top:10px;
 	}
 	.topnav.responsive li{
 			float:none;
