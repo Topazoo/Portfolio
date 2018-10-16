@@ -109,11 +109,13 @@ footer{
 }
 
 .subnav {
-	color:black !important;
+	color:white !important;
 	display: inline-block !important;
 	font-size: 18px !important;
 	padding-left: 10px !important;
 	padding-right: 10px !important;
+	background-color:rgba(2, 117, 216, .6) !important;
+	min-width: 160px !important;
 }
 
 .floatnav {
@@ -334,6 +336,7 @@ a.nostyle:visited{
 
 .navbreak{
 	display: inline-block;
+	padding: 2px 0px 2px 0px; 
 }
 
 .doc{
@@ -380,6 +383,11 @@ a.nostyle:visited{
 			width:auto;
 			padding-left:0
 	}
+	.subnav {
+			padding-left:20px !important;
+			padding-right:20px !important;
+	}
+
 }
 
 @media (min-width:992px){
