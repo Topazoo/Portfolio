@@ -2,10 +2,12 @@ from directory_tree import Root
 from Bot import Bot
 from django.shortcuts import render
 from django.http import HttpResponse
+from models import Sender
 import requests
 import json
 import os
 import sys
+import datetime
 
 # ------------------- Helper Functions ----------------------
 def read_ini():
@@ -67,6 +69,34 @@ def validate_message(request, needs_auth_code, to_number, text):
         auth_code = request.POST['auth_key']
         if ini['auth_key'] != auth_code:
             return HttpResponse(json.dumps({'code': 'auth_key_invalid'}), content_type="application/json")
+
+    # Ensure only 3 messages per day can be sent by an IP
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
+    db_record = Sender.objects.filter(ip_address=str(ip))
+
+    if not db_record:
+        # If IP has never sent a message, create a record
+        db_record = Sender(ip_address=str(ip), sent_count=1)
+        db_record.save()
+    else:
+        db_record = db_record[0]
+        now = datetime.datetime.now().strftime("%Y-%m-%d")
+        if db_record.last_sent != now:
+            # If message not sent today, reset count and lase sent
+            db_record.sent_count = 1
+            db_record.last_sent = now
+        else:
+            # If message was sent today, add to count
+            db_record.sent_count += 1
+            if db_record.sent_count > 3:
+                return HttpResponse(json.dumps({'code': 'num_messages_exceeded'}), content_type="application/json")
+
+        db_record.save()
 
     return 1
 

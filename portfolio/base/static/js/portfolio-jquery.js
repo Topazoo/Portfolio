@@ -52,6 +52,8 @@ $(document).ready(function() {
                         alert('Please enter a message.');
                     else if(response['code'] == "phone_invalid")
                         alert('Please enter a valid 10-digit phone number (without hyphens).');
+                    else if(response['code'] == "num_messages_exceeded")
+                        alert('Only 3 messages a day per IP address may be sent to avoid spam.');
                     else
 					    alert('Your message has been sent!'); 
                 },
