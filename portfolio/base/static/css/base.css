@@ -344,7 +344,21 @@ a.nostyle:visited{
 	height:100%;
 }
 
-@media (max-width:600px){
+@media (max-width:320px){
+	.subnav {
+		font-size: 12px !important;
+		min-width: 100px !important;
+	}
+	.navbreak{
+		display: block;
+	}
+	.subnav2 {
+		font-size: 14px !important;
+		min-width: 120px !important;
+	}
+}
+
+@media (min-width: 321px) and (max-width:600px){
 	.profile{
 			box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 			max-width:40%;
